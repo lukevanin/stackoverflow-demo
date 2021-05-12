@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  StackOverflow
+
+  Created by Luke Van In on 2021/05/12.
+  
+*/
+
+"search-placeholder" = "Search";
+"asked-by %@" = "asked by %@";

@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */; };
 		FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */; };
-		FC44AA7D264C1EE7004B32A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA7C264C1EE7004B32A4 /* ViewController.swift */; };
-		FC44AA80264C1EE7004B32A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA7E264C1EE7004B32A4 /* Main.storyboard */; };
 		FC44AA82264C1EE9004B32A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA81264C1EE9004B32A4 /* Assets.xcassets */; };
 		FC44AA85264C1EE9004B32A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA83264C1EE9004B32A4 /* LaunchScreen.storyboard */; };
+		FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */; };
+		FC44AA95264C1F86004B32A4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA92264C1F86004B32A4 /* Readme.md */; };
+		FC44AA96264C1F86004B32A4 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA93264C1F86004B32A4 /* sample.json */; };
+		FC44AA97264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */; };
+		FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA98264C2801004B32A4 /* SpacerView.swift */; };
+		FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA9A264C2D24004B32A4 /* SearchModel.swift */; };
+		FC44AAA0264C5DE9004B32A4 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */; };
+		FC44AAA1264C5DE9004B32A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9F264C5DE9004B32A4 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC44AA75264C1EE7004B32A4 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC44AA7C264C1EE7004B32A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC44AA7F264C1EE7004B32A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC44AA81264C1EE9004B32A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC44AA84264C1EE9004B32A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC44AA86264C1EE9004B32A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FC44AA92264C1F86004B32A4 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		FC44AA93264C1F86004B32A4 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
+		FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS Developer Practical Test (1).pdf"; sourceTree = "<group>"; };
+		FC44AA98264C2801004B32A4 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
+		FC44AA9A264C2D24004B32A4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		FC44AA9F264C5DE9004B32A4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +52,9 @@
 		FC44AA6C264C1EE7004B32A4 = {
 			isa = PBXGroup;
 			children = (
+				FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */,
+				FC44AA92264C1F86004B32A4 /* Readme.md */,
+				FC44AA93264C1F86004B32A4 /* sample.json */,
 				FC44AA77264C1EE7004B32A4 /* StackOverflow */,
 				FC44AA76264C1EE7004B32A4 /* Products */,
 			);
@@ -58,8 +73,11 @@
 			children = (
 				FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */,
 				FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */,
-				FC44AA7C264C1EE7004B32A4 /* ViewController.swift */,
-				FC44AA7E264C1EE7004B32A4 /* Main.storyboard */,
+				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
+				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
+				FC44AA98264C2801004B32A4 /* SpacerView.swift */,
+				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
+				FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */,
 				FC44AA81264C1EE9004B32A4 /* Assets.xcassets */,
 				FC44AA83264C1EE9004B32A4 /* LaunchScreen.storyboard */,
 				FC44AA86264C1EE9004B32A4 /* Info.plist */,
@@ -124,9 +142,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC44AA97264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf in Resources */,
 				FC44AA85264C1EE9004B32A4 /* LaunchScreen.storyboard in Resources */,
+				FC44AA96264C1F86004B32A4 /* sample.json in Resources */,
+				FC44AAA1264C5DE9004B32A4 /* Localizable.strings in Resources */,
 				FC44AA82264C1EE9004B32A4 /* Assets.xcassets in Resources */,
-				FC44AA80264C1EE7004B32A4 /* Main.storyboard in Resources */,
+				FC44AA95264C1F86004B32A4 /* Readme.md in Resources */,
+				FC44AAA0264C5DE9004B32A4 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +159,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC44AA7D264C1EE7004B32A4 /* ViewController.swift in Sources */,
+				FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */,
+				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
+				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +170,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FC44AA7E264C1EE7004B32A4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC44AA7F264C1EE7004B32A4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC44AA83264C1EE9004B32A4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DBK476475Y;
 				INFOPLIST_FILE = StackOverflow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DBK476475Y;
 				INFOPLIST_FILE = StackOverflow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

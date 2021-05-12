@@ -1,0 +1,568 @@
+{
+   "items":[
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "swift3",
+            "google-cloud-platform",
+            "google-translate"
+         ],
+         "owner":{
+            "user_type":"does_not_exist",
+            "display_name":"user6652820"
+         },
+         "is_answered":false,
+         "view_count":853,
+         "answer_count":3,
+         "score":1,
+         "last_activity_date":1620803949,
+         "creation_date":1494523139,
+         "question_id":43921916,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/43921916/google-translate-rest-api-error-403-in-ios-app-swift-3",
+         "title":"Google Translate rest api error 403 in iOS app swift 3",
+         "body":"<p>will some one please help me regarding this issue?</p>\n\n<p>I am developing an app in swift 3 and I am trying to integrate google translate api in my iOS app but the rest api is responding with the following error:</p>\n\n<pre><code>[\"error\": {\ncode = 403;\nerrors = (\n{\ndomain = global;\nmessage = \"Requests from this ios client application &lt;empty&gt; are blocked.\";\nreason = forbidden;\n}\n);\nmessage = \"Requests from this ios client application &lt;empty&gt; are blocked.\";\nstatus = \"PERMISSION_DENIED\";\n}]\n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "swift",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":11,
+            "user_id":15836923,
+            "user_type":"registered",
+            "profile_image":"https://lh3.googleusercontent.com/a/AATXAJwcLMZ9N77Fg9E1SJ4inXGeRmaY7Osp9C0Ephk=k-s128",
+            "display_name":"Rodriguez",
+            "link":"https://stackoverflow.com/users/15836923/rodriguez"
+         },
+         "is_answered":false,
+         "view_count":17,
+         "answer_count":0,
+         "score":1,
+         "last_activity_date":1620774573,
+         "creation_date":1620403648,
+         "last_edit_date":1620774573,
+         "question_id":67438338,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67438338/failed-to-install-a-project-to-a-real-device",
+         "title":"Failed to install a project to a real device",
+         "body":"<p>Someone who solved this problem by emulating on an iPhone.\nIt is a project that a library was embedded and well I already gave it a lot of laps and all the Build Setting configurations, from the signature of the build functions are correctly I do not understand what may be happening I have xcode 12.0.1 I will thank you very much for a feetback,\neste es mi error:</p>\n<pre><code> dyld: Symbol not found: _$s8DropDownAAC9DirectionO6bottomyA2DmFWC\n  Referenced from: /private/var/containers/Bundle/Application/0E7CFCF6-F3E3-422F-8EF9-BD721F6D0ADB/proyectodemo.app/Frameworks/FrameworkDemo.framework/FrameworkDemo\n  Expected in: /private/var/containers/Bundle/Application/0E7CFCF6-F3E3-422F-8EF9-BD721F6D0ADB/proyectodemo.app/Frameworks/DropDown.framework/DropDown\n in /private/var/containers/Bundle/Application/0E7CFCF6-F3E3-422F-8EF9-BD721F6D0ADB/proyectodemo.app/Frameworks/FrameworkDemo.framework/FrameworkDemo\ndyld: launch, loading dependent libraries\nDYLD_LIBRARY_PATH=/usr/lib/system/introspection\nDYLD_INSERT_LIBRARIES=/Developer/usr/lib/libBacktraceRecording.dylib:/Developer/usr/lib/libMainThreadChecker.dylib:/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib\n(lldb) \n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "objective-c",
+            "iphone",
+            "swift2",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":1664,
+            "user_id":5929072,
+            "user_type":"registered",
+            "accept_rate":77,
+            "profile_image":"https://i.stack.imgur.com/h1AXn.png?s=128&g=1",
+            "display_name":"vikas prajapati",
+            "link":"https://stackoverflow.com/users/5929072/vikas-prajapati"
+         },
+         "is_answered":true,
+         "view_count":9369,
+         "accepted_answer_id":41036133,
+         "answer_count":3,
+         "score":17,
+         "last_activity_date":1620750501,
+         "creation_date":1481189656,
+         "last_edit_date":1620750501,
+         "question_id":41036045,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/41036045/when-objc-and-nonobjc-write-before-method-and-variable-in-swift",
+         "title":"When @objc and @nonobjc write before method and variable in swift?",
+         "body":"<p>When I declare <code>static</code> parameter in extension of class then I have to write <code>@nonobjc</code> before variable like:</p>\n<pre><code>@nonobjc static let test = &quot;test&quot;\n</code></pre>\n<p>and sometimes I have to write <code>@objc</code> before method, so what is use of <code>@objc</code> and <code>@nonobjc</code> in Swift.</p>\n<p>Can anyone help me for this problem?</p>\n"
+      },
+      {
+         "tags":[
+            "arrays",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":1,
+            "user_id":15884851,
+            "user_type":"registered",
+            "profile_image":"https://lh3.googleusercontent.com/a/AATXAJx2m3tdr1Z-zfsgCS_A1YRuzfVApgnixg7tlc_D=k-s128",
+            "display_name":"JordanMikey",
+            "link":"https://stackoverflow.com/users/15884851/jordanmikey"
+         },
+         "is_answered":false,
+         "view_count":10,
+         "answer_count":0,
+         "score":0,
+         "last_activity_date":1620660049,
+         "creation_date":1620660049,
+         "question_id":67473188,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67473188/accessing-an-appended-array-from-another-class-using-swift-3",
+         "title":"Accessing an appended array from another class using Swift 3",
+         "body":"<p>I have a small issue. I have been trying to look for answers online but all I can find are complex problems with complex answers, therefore I want to ask this..</p>\n<p>I have a class <strong>A</strong>, and a class <strong>B</strong>.</p>\n<p>My class A has an array variable called:</p>\n<pre><code>public var array: [Double] = []\n</code></pre>\n<p>This array is appended throughout the class, so when I print the array in the console, it outputs all my elements.</p>\n<p>My problem: I am trying to access this exact array variable in my class B, but when I do, the array is empty/nil, and indices are out of range, when I try to access index [0], for example. Therefore how do I go about accessing the array in class B, with all the appended elements from class A?</p>\n<p>Class B:</p>\n<pre><code>var arrayClassB = ClassAViewController()\n\narrayClassB.array[0]\n\n**Output: Nil / []**\n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "push-notification",
+            "notifications",
+            "swift3",
+            "ios10"
+         ],
+         "owner":{
+            "reputation":1753,
+            "user_id":831098,
+            "user_type":"registered",
+            "accept_rate":29,
+            "profile_image":"https://www.gravatar.com/avatar/4b54c4f308e997bae6aa76b8f5e57f62?s=128&d=identicon&r=PG",
+            "display_name":"user831098",
+            "link":"https://stackoverflow.com/users/831098/user831098"
+         },
+         "is_answered":true,
+         "view_count":25758,
+         "answer_count":10,
+         "score":19,
+         "last_activity_date":1620589443,
+         "creation_date":1474257762,
+         "last_edit_date":1582151311,
+         "question_id":39565172,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/39565172/get-the-push-notification-token-ios-10-swift-3",
+         "title":"Get the push notification token - iOS 10, Swift 3",
+         "body":"<p>How to get the device token from new <strong>xCode 8</strong>, <strong>Swift 3</strong> in <strong>iOS 10</strong>?</p>\n\n<p>Here is the code to register notification:</p>\n\n<pre><code>func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {    \n\n    DispatchQueue.main.async {\n        let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)\n        UIApplication.shared.registerUserNotificationSettings(settings)\n    }\n    return true\n}\n\nfunc application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {\n\n    if notificationSettings.types != UIUserNotificationType() {\n        application.registerForRemoteNotifications()\n    }\n}\n</code></pre>\n\n<p>Here i get the token, but i get the following error </p>\n\n<pre><code>Cannot invoke initializer for type 'UnsafePointer&lt;CChar&gt;' with an argument list of type '(UnsafeRawPointer)':\n</code></pre>\n\n<hr>\n\n<pre><code>func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {\n\n    let chars = UnsafePointer&lt;CChar&gt;((deviceToken as NSData).bytes)\n    var token = \"\"\n\n    for i in 0..&lt;deviceToken.count {\n        token += String(format: \"%02.2hhx\", arguments: [chars[i]])\n    }\n\n    print(\"Registration succeeded!\")\n    print(\"Token: \", token)\n}\n</code></pre>\n\n<p>Can anyone help me solve it?</p>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "swift3",
+            "payment",
+            "upi"
+         ],
+         "owner":{
+            "reputation":1372,
+            "user_id":4169262,
+            "user_type":"registered",
+            "profile_image":"https://i.stack.imgur.com/VOpe9.jpg?s=128&g=1",
+            "display_name":"Arun",
+            "link":"https://stackoverflow.com/users/4169262/arun"
+         },
+         "is_answered":false,
+         "view_count":4022,
+         "answer_count":4,
+         "score":14,
+         "last_activity_date":1620551739,
+         "creation_date":1505225612,
+         "last_edit_date":1505278850,
+         "question_id":46178769,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/46178769/how-to-get-response-after-integrating-upi-using-hyperlink",
+         "title":"How to get response after integrating UPI using hyperlink",
+         "body":"<p>In my iOS application, I need to accept payments from the user. I am using UPI for the same. I have followed the following document provided by UPI</p>\n\n<p><a href=\"http://www.npci.org.in/documents/UPI-Linking-Specs-ver-1.1_draft.pdf\" rel=\"noreferrer\">http://www.npci.org.in/documents/UPI-Linking-Specs-ver-1.1_draft.pdf</a></p>\n\n<p>I have created a deeplink as stated in the document. <code>UIApplication.shared.open</code> is used to open the deeplink url so that it opens any installed PSP(Payment Service Provider) application in my phone(like PhonePe, BHIM etc)</p>\n\n<pre><code>func payButtonClicked() {\n\n        guard let urlString = \"upi://pay?pa=samplevpa@ybl&amp;pn=Sample Name&amp;am=1&amp;cu=INR\".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)\n            else {\n                return\n            }\n\n        guard let url = URL(string: urlString) else {\n            return\n        }\n\n        if !UIApplication.shared.canOpenURL(url) {\n            print(\"url cannot be opened\")\n            return\n        }\n\n        UIApplication.shared.open(url, options: [:], completionHandler: { (success) in\n\n            print(success)\n\n        })\n\n    }\n</code></pre>\n\n<p>I have registered my application with custom URL schemes and have added the scheme upi for ApplicationQueriesScheme in plist file</p>\n\n<pre><code>&lt;array&gt;\n        &lt;dict&gt;\n            &lt;key&gt;CFBundleTypeRole&lt;/key&gt;\n            &lt;string&gt;Editor&lt;/string&gt;\n            &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;\n            &lt;array&gt;\n                &lt;string&gt;SampleApp&lt;/string&gt;\n            &lt;/array&gt;\n            &lt;key&gt;CFBundleURLName&lt;/key&gt;\n            &lt;string&gt;com.company.SampleApp&lt;/string&gt;\n        &lt;/dict&gt;\n    &lt;/array&gt;\n    &lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;\n    &lt;array&gt;\n        &lt;string&gt;upi&lt;/string&gt;\n    &lt;/array&gt;\n</code></pre>\n\n<p>It is opening the PSP application and I'm able to make the transaction. The problem is I'm not able to get the response back from the PSP application. There is no callback method to <code>UIApplication.shared.open</code> method. I need to get the status of the transaction back from the PSP application and show the status to the user. Any help appreciated</p>\n"
+      },
+      {
+         "tags":[
+            "paypal",
+            "swift3",
+            "braintree"
+         ],
+         "owner":{
+            "reputation":2803,
+            "user_id":4933696,
+            "user_type":"registered",
+            "accept_rate":71,
+            "profile_image":"https://i.stack.imgur.com/NTxyC.png?s=128&g=1",
+            "display_name":"Anurag Sharma",
+            "link":"https://stackoverflow.com/users/4933696/anurag-sharma"
+         },
+         "is_answered":true,
+         "view_count":4492,
+         "accepted_answer_id":43133571,
+         "answer_count":4,
+         "score":6,
+         "last_activity_date":1620483130,
+         "creation_date":1484894864,
+         "last_edit_date":1485226416,
+         "question_id":41757631,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/41757631/paypal-with-braintree-saying-merchant-account-not-found",
+         "title":"Paypal with Braintree saying &quot;Merchant account not found&quot;",
+         "body":"<p>I tried integrating PayPal using braintree and following <a href=\"https://developers.braintreepayments.com/guides/paypal/client-side/ios/v3\" rel=\"noreferrer\">this tutorial</a>. I end up getting an error: <code>Merchant account not found</code> - <a href=\"https://i.stack.imgur.com/RH4pb.png\" rel=\"noreferrer\">screenshot</a>.</p>\n\n<p>I am using Swift 3 and Xcode 8.1.</p>\n\n<p><a href=\"https://i.stack.imgur.com/0PvAJ.png\" rel=\"noreferrer\">here is my viewDidLoad</a></p>\n\n<p>These are all required updates in my app:</p>\n\n<p><a href=\"https://i.stack.imgur.com/swF0c.png\" rel=\"noreferrer\">ScreenShot 1</a> </p>\n\n<p><a href=\"https://i.stack.imgur.com/Zx8NJ.png\" rel=\"noreferrer\">ScreenShot 2</a></p>\n\n<p><a href=\"https://i.stack.imgur.com/2KknC.png\" rel=\"noreferrer\">ScreenShot 3</a></p>\n\n<p><a href=\"https://i.stack.imgur.com/oDxxV.png\" rel=\"noreferrer\">ScreenShot 4</a></p>\n\n<p><a href=\"https://i.stack.imgur.com/cGh5k.png\" rel=\"noreferrer\">ScreenShot 5</a></p>\n\n<p>Any help will be appreciated!</p>\n"
+      },
+      {
+         "tags":[
+            "swift",
+            "xcode",
+            "swift3",
+            "swiftui",
+            "uipickerview"
+         ],
+         "owner":{
+            "reputation":31,
+            "user_id":6026338,
+            "user_type":"registered",
+            "accept_rate":20,
+            "profile_image":"https://lh5.googleusercontent.com/-4aMPftC4NAk/AAAAAAAAAAI/AAAAAAAAAEY/glwv-sbu7g0/photo.jpg?sz=128",
+            "display_name":"Qazi Ammar",
+            "link":"https://stackoverflow.com/users/6026338/qazi-ammar"
+         },
+         "is_answered":false,
+         "view_count":13,
+         "answer_count":0,
+         "score":0,
+         "last_activity_date":1620461314,
+         "creation_date":1620461314,
+         "question_id":67445371,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67445371/change-the-color-of-a-focused-element-picker-swiftui-watchos",
+         "title":"Change the color of a focused element (Picker) SwiftUI - WatchOS",
+         "body":"<p>How can I change the focus color of a selected element in WatchOS7 with swiftUI. Here's my example below with a Picker whose focus color is green (the default one) but I want to change it to blud to be consistant with my app layout.</p>\n<p><a href=\"https://i.stack.imgur.com/3pL5u.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/3pL5u.png\" alt=\"enter image description here\" /></a></p>\n<p>I search over the internet and stackoverflow but did not find andy solution to this. Is it possible to do it in SwiftUI.</p>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "swift3",
+            "cocoapods"
+         ],
+         "owner":{
+            "reputation":410,
+            "user_id":5619230,
+            "user_type":"registered",
+            "profile_image":"https://www.gravatar.com/avatar/78acec47df254fe035dd8673f62f9f8a?s=128&d=identicon&r=PG&f=1",
+            "display_name":"resin_squirrel",
+            "link":"https://stackoverflow.com/users/5619230/resin-squirrel"
+         },
+         "is_answered":true,
+         "view_count":12287,
+         "accepted_answer_id":40704965,
+         "answer_count":3,
+         "score":14,
+         "last_activity_date":1620316515,
+         "creation_date":1479228046,
+         "last_edit_date":1479230804,
+         "question_id":40615207,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/40615207/run-custom-shell-script-cp-embed-pods-frameworks-no-such-file-or-directory",
+         "title":"Run custom shell script &#39;[cp] embed pods frameworks&#39; no such file or directory",
+         "body":"<p>Just finished resolving my errors after converting to Swift 3 only to get this error when trying to compile. I have attached a screenshot for clarity, it does not look like the system is looking for a .app file or .sh file. Really don't know too much about the Pods, so any help would be greatly appreciated!</p>\n\n<p><a href=\"https://i.stack.imgur.com/wK2dl.jpg\"><img src=\"https://i.stack.imgur.com/wK2dl.jpg\" alt=\"enter image description here\"></a></p>\n"
+      },
+      {
+         "tags":[
+            "swift3"
+         ],
+         "owner":{
+            "reputation":18880,
+            "user_id":999530,
+            "user_type":"registered",
+            "accept_rate":86,
+            "profile_image":"https://i.stack.imgur.com/YGip7.png?s=128&g=1",
+            "display_name":"Travis Griggs",
+            "link":"https://stackoverflow.com/users/999530/travis-griggs"
+         },
+         "is_answered":true,
+         "view_count":2362,
+         "accepted_answer_id":41663958,
+         "answer_count":2,
+         "score":1,
+         "last_activity_date":1620168553,
+         "creation_date":1484447481,
+         "question_id":41657221,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/41657221/cant-extend-generic-struct-for-specific-type",
+         "title":"Can&#39;t extend generic struct for specific type",
+         "body":"<p>Wanted to toy with adding some sugar in Swift3. Basically, I wanted to be able to do something like:</p>\n\n<pre><code>let randomAdjust = (-10...10).random\n</code></pre>\n\n<p>To do that, I decided I would need to extend <code>ClosedRange</code>. But then found it would probably be even better for my case, I really just plan on doing Int's for now, to use <code>CountableClosedRange</code>. My latest of multiple attempts looked like:</p>\n\n<pre><code>extension CountableClosedRange where Bound == Int {\n    var random:Int {\n        return Int(arc4random_uniform(UInt32(self.count) + 1)) + self.lowerBound\n    }\n}\n</code></pre>\n\n<p>But the playground complains:</p>\n\n<pre><code>error: same-type requirement makes generic parameter 'Bound' non-generic\nextension CountableClosedRange where Bound == Int {\n</code></pre>\n\n<p>I don't even know what it's telling me there. </p>\n"
+      },
+      {
+         "tags":[
+            "swift",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":235,
+            "user_id":5553036,
+            "user_type":"registered",
+            "accept_rate":64,
+            "profile_image":"https://www.gravatar.com/avatar/4cc307c0ebecc0bce2f80343822abfb2?s=128&d=identicon&r=PG&f=1",
+            "display_name":"StevenTan",
+            "link":"https://stackoverflow.com/users/5553036/steventan"
+         },
+         "is_answered":true,
+         "view_count":18598,
+         "accepted_answer_id":44405882,
+         "answer_count":7,
+         "score":11,
+         "last_activity_date":1620124917,
+         "creation_date":1496819019,
+         "question_id":44405748,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/44405748/only-alphabet-and-whitespace-allowed-in-uitextfield-swift",
+         "title":"Only Alphabet and whitespace allowed in UITextField Swift",
+         "body":"<p>I want to validate my textField that check only Alphabet &amp; whitespace allowed, If number was given then it will return warning error. </p>\n\n<pre><code>//First I declare my value to variable\nvar nameValue: String = mainView.nameTextField.text!\n\n//Then I declare this \n let set = CharacterSet(charactersIn: \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ\")        \n\n//And this is the validation\nif(nameValue.rangeOfCharacter(from: set.inverted) != nil ){\n    self.showAlert(message: \"Must not contain Number in Name\")\n   } else {\n      //other code\n   }\n\n\nex: nameValue : \"abcd\" it works, but \nif nameValue : \"ab cd\" whitespace included, it returns the showAlert message.\n</code></pre>\n\n<p>This code works but only for alphabets, What I need now is alphabets and a whitespace. and what I declare was a hardcode I guess. Maybe you guys have better code and options for this case.</p>\n\n<p>Thank you .</p>\n"
+      },
+      {
+         "tags":[
+            "swift",
+            "swift3",
+            "swift4",
+            "swift5"
+         ],
+         "owner":{
+            "reputation":657,
+            "user_id":12094694,
+            "user_type":"registered",
+            "profile_image":"https://i.stack.imgur.com/n1RJt.jpg?s=128&g=1",
+            "display_name":"Jaseel.Dev",
+            "link":"https://stackoverflow.com/users/12094694/jaseel-dev"
+         },
+         "is_answered":false,
+         "view_count":58,
+         "answer_count":0,
+         "score":0,
+         "last_activity_date":1620123998,
+         "creation_date":1620119092,
+         "question_id":67381766,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67381766/confused-of-async-block-inside-loop",
+         "title":"Confused of Async block inside loop",
+         "body":"<p>Here I want to print the data only after executing all loops inside the closure block.\nsince i don't know how to use dispatch group exactly.Have tried in several ways..\nCould somebody help me figure out what am I doing wrong here in below given function.</p>\n<pre><code>private func recognizeText(images: [UIImage]) {\n    \n    let myDispatchGroup = DispatchGroup()\n    \n    self.extractedTextfromImages(images: images) { blocks in\n        myDispatchGroup.enter()\n        \n        for block in blocks {\n            \n            for line in block.lines {\n                \n                \n                //save emirate id\n                if isValidEmiratesID(emiratesID: line.text) == true {\n                    \n                    let id  = line.text\n                    self.dt.id = id\n                }\n                \n                // save name\n                if line.text.lowercased().range(of: &quot;name&quot;) != nil {\n                    \n                    \n                    if let range = line.text.range(of: &quot;:&quot;) {\n                        let nm = line.text[range.upperBound...]\n                        let name = String(nm.trimmingCharacters(in: .whitespaces))\n                        self.dt.name = name\n                    }\n                }\n                \n            }\n            \n        }\n        myDispatchGroup.leave()\n    }\n    \n    myDispatchGroup.notify(queue: .main) {\n        print(&quot;data is \\(self.dt)&quot;)\n    }\n    \n    \n    \n}\n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "arrays",
+            "swift",
+            "uitableview",
+            "swift3",
+            "tableview"
+         ],
+         "owner":{
+            "reputation":1,
+            "user_id":7701708,
+            "user_type":"registered",
+            "profile_image":"https://www.gravatar.com/avatar/9e3a16b179c48782da59a9b5b525c73c?s=128&d=identicon&r=PG&f=1",
+            "display_name":"Muhammad Rehan",
+            "link":"https://stackoverflow.com/users/7701708/muhammad-rehan"
+         },
+         "is_answered":false,
+         "view_count":17,
+         "answer_count":0,
+         "score":-3,
+         "last_activity_date":1620070603,
+         "creation_date":1620069115,
+         "last_edit_date":1620070603,
+         "question_id":67374549,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67374549/working-on-tableviewcell-banner-butt-case-1-or-case-2-celling-not-working-in-sw",
+         "title":"Working on tableviewCell banner butt case 1, or case 2 celling not working in swift",
+         "body":"<p>i am using tableview cell for multiple banners in but one image calling in ever banners not different images.</p>\n<pre><code>       case .bannerWithShop:\n            let cell: CellBanner = tableView.dequeueReusableCell(withIdentifier: &quot;CellHomeBannerWithShop&quot;, for: indexPath) as! CellBanner\n            cell.addTargget(target: self, selector: #selector(self.btnShowNow(_:)))\n            //cell.bannerImageUrl = self.viewModel.bannerImg1\n            cell.imgBanner.image = UIImage(named: &quot;homeBanner4&quot;)\n            return cell\n        case .banner:\n            let cell: CellBanner = tableView.dequeueReusableCell(withIdentifier: &quot;CellHomeBanner&quot;, for: indexPath) as! CellBanner\n            switch indexPath.row {\n            //2\n            case 2:\n                //cell.bannerImageUrl = self.viewModel.bannerImg5\n                cell.imgBanner.image = UIImage(named: &quot;homeBanner5&quot;)\n                break\n            case 4:\n                //cell.bannerImageUrl = self.viewModel.bannerImg3\n                cell.imgBanner.image = UIImage(named: &quot;homeBanner4&quot;)\n               break\n            default:\n                //cell.bannerImageUrl = self.viewModel.bannerImg5\n                cell.imgBanner.image = UIImage(named: &quot;homeBanner1&quot;)\n            }\n            return cell\n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "swift3",
+            "uibutton"
+         ],
+         "owner":{
+            "reputation":35589,
+            "user_id":959734,
+            "user_type":"registered",
+            "accept_rate":53,
+            "profile_image":"https://www.gravatar.com/avatar/44608a8e81f8ca8ee21619d07df32b92?s=128&d=identicon&r=PG",
+            "display_name":"Leem.fin",
+            "link":"https://stackoverflow.com/users/959734/leem-fin"
+         },
+         "is_answered":true,
+         "view_count":10737,
+         "answer_count":4,
+         "score":4,
+         "last_activity_date":1619999464,
+         "creation_date":1504783328,
+         "question_id":46095092,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/46095092/programmatically-set-a-button-width-and-height",
+         "title":"programmatically set a button width and height",
+         "body":"<p>I would like to programmatically customize the <code>UIButton</code>. My code starts here:</p>\n\n<pre><code>class MyButton: UIButton {\n    override func awakeFromNib() {\n        super.awakeFromNib()\n\n        layer.shadowRadius = 5.0\n        ...\n    }\n}\n</code></pre>\n\n<p>Now I would like to define a constant width and height for the button, how to do it in code?</p>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "date",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":3027,
+            "user_id":5108517,
+            "user_type":"registered",
+            "accept_rate":88,
+            "profile_image":"https://graph.facebook.com/1002829803081706/picture?type=large",
+            "display_name":"0ndre_",
+            "link":"https://stackoverflow.com/users/5108517/0ndre"
+         },
+         "is_answered":true,
+         "view_count":4619,
+         "accepted_answer_id":39820082,
+         "answer_count":1,
+         "score":1,
+         "last_activity_date":1619968536,
+         "creation_date":1475431026,
+         "question_id":39819940,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/39819940/how-to-get-monday-0000-of-current-week-swift-3",
+         "title":"How to get Monday 00:00 of current week? Swift 3",
+         "body":"<p>I'm trying to return Monday 00:00 from my date. This is my code:</p>\n\n<pre><code>func getMonday(myDate: Date) -&gt; Date {\n    let cal = Calendar.current\n    let comps = cal.dateComponents([.weekOfYear, .yearForWeekOfYear], from: myDate)\n    let beginningOfWeek = cal.date(from: comps)!\n    return beginningOfWeek\n}\n</code></pre>\n\n<p>My problem is that it does not return Monday 00:00 , but Saturday 22:00.</p>\n\n<p>Example:</p>\n\n<pre><code>    let monday1 = getMonday(myDate: date) //date is: 2016-10-04 17:00:00\n    print(monday1) //Prints: 2016-10-01 22:00:00 (Saturday)\n</code></pre>\n\n<p>My question is:</p>\n\n<p><strong>How to return Monday 00:00 from <code>myDate</code></strong>?</p>\n\n<p>Thank you very much.</p>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift3",
+            "background-process",
+            "synchronisation"
+         ],
+         "owner":{
+            "reputation":8225,
+            "user_id":2391849,
+            "user_type":"registered",
+            "accept_rate":84,
+            "profile_image":"https://www.gravatar.com/avatar/04df260673cc820547a3083e4ee87fce?s=128&d=identicon&r=PG",
+            "display_name":"Mulgard",
+            "link":"https://stackoverflow.com/users/2391849/mulgard"
+         },
+         "is_answered":true,
+         "view_count":7646,
+         "accepted_answer_id":40328936,
+         "answer_count":2,
+         "score":10,
+         "last_activity_date":1619947163,
+         "creation_date":1477826987,
+         "last_edit_date":1482759794,
+         "question_id":40328576,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/40328576/periodic-background-synchronization",
+         "title":"Periodic background synchronization",
+         "body":"<p>Im quite new to iOS programming and now want to implement a periodic background synchronization to synchronize my server data with client data. What I want to achieve is comparable with Androids <code>SyncAdapter</code> where you can define a time interval (for example each 30 minutes) and the system will trigger the defined task automatically in the background.</p>\n\n<p>Until now I could not find such mechanism for Swift 3.0 so I need to ask if somone has experience or some hints for me how I can achieve this.</p>\n\n<p>What I want to do sounds quite simple:</p>\n\n<p>When the app starts for the first time the app should setup a sync manager which automatically triggers a background task every 30 minutes. The background task is responsible to synchronize server and client data (using Alamofire).</p>\n\n<p>How can I do that?</p>\n"
+      },
+      {
+         "tags":[
+            "swift3",
+            "swift5",
+            "xcode12"
+         ],
+         "owner":{
+            "reputation":1,
+            "user_id":15763105,
+            "user_type":"registered",
+            "profile_image":"https://lh4.googleusercontent.com/-lG4HCSPRvHk/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucljqmSDwJayyi4cibTrRFJekaXqug/s96-c/photo.jpg?sz=128",
+            "display_name":"user15763105",
+            "link":"https://stackoverflow.com/users/15763105/user15763105"
+         },
+         "is_answered":false,
+         "view_count":15,
+         "answer_count":0,
+         "score":-2,
+         "last_activity_date":1619882091,
+         "creation_date":1619878222,
+         "last_edit_date":1619882091,
+         "question_id":67347174,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/67347174/swift-3-convert-swift-5",
+         "title":"Swift 3 convert Swift 5",
+         "body":"<p>and i have a problem, i have coded in swift 3, and now i want to convert this to swift 5, but i can't do it could someone help me please?\nI haven't been able to resolve this for several months.\nand I'm on Xcode 12.\nthank you so much</p>\n<pre><code>import UIKit\nimport Charts\n\nclass StatisticViewController: UIViewController {\n\n    @IBOutlet weak var menuBarButton: UIBarButtonItem!\n    @IBOutlet weak var viewChart: BarChartView!\n    \n    var weekdays = [&quot;Lun&quot;, &quot;mar&quot;, &quot;mer&quot;, &quot;jeu&quot;, &quot;ven&quot;, &quot;sam&quot;, &quot;dim&quot;]\n    \n    override func viewDidLoad() {\n        super.viewDidLoad()\n        \n        if self.revealViewController() != nil {\n            menuBarButton.target = self.revealViewController()\n            menuBarButton.action = #selector(SWRevealViewController.revealToggle(_:))\n            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())\n        }\n        \n        // 1 - Initialize Chart\n        self.initializeChart()\n        \n        // 2- Load data to chart\n        self.loadDataToChart()\n    \n    }\n    \n    func initializeChart() {\n        \n        viewChart.noDataText = &quot;No Data&quot;\n        viewChart.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)\n        viewChart.xAxis.labelPosition = .bottom\n        //viewChart.descriptionText = &quot;&quot;\n        //viewChart.xAxis.setLabelsToSkip(0)\n        \n        viewChart.legend.enabled = false\n        viewChart.scaleYEnabled = false\n        viewChart.scaleYEnabled = false\n        viewChart.pinchZoomEnabled = false\n        viewChart.doubleTapToZoomEnabled = false\n        \n        viewChart.leftAxis.axisMinimum = 0.0\n        viewChart.leftAxis.axisMaximum = 100.00\n        viewChart.highlighter = nil\n        viewChart.rightAxis.enabled = false\n        viewChart.xAxis.drawGridLinesEnabled = false\n        \n        \n    }\n    \n    func loadDataToChart() {\n        \n        APIManager.shared.getDriverRevenue { (json) in\n            \n            if json != &quot;&quot; {\n                \n                let revenue = json[&quot;revenue&quot;]\n                \n                var dataEntries: [BarChartDataEntry] = []\n                \n                for i in 0..&lt;self.weekdays.count {\n                    let day = self.weekdays[i]\n                    //let dataEntry = BarChartDataEntry(x: Double(i), y: revenue[day].double!)\n                    let dataEntry = BarChartDataEntry(value: revenue[day].double!, xindex: i)\n                    dataEntries.append(dataEntry)\n                }\n                \n                let chartDataSet = BarChartDataSet(entries: dataEntries, label: &quot;Revenue by day&quot;)\n                chartDataSet.colors = ChartColorTemplates.material()\n                \n                let chartData = BarChartData(dataSet: chartDataSet)\n                \n                self.viewChart.data = chartData\n                \n            }\n        }\n        \n    }\n }\n</code></pre>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "uitableview",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":4518,
+            "user_id":4337240,
+            "user_type":"registered",
+            "accept_rate":72,
+            "profile_image":"https://i.stack.imgur.com/y0EpM.jpg?s=128&g=1",
+            "display_name":"Chaudhry Talha",
+            "link":"https://stackoverflow.com/users/4337240/chaudhry-talha"
+         },
+         "is_answered":true,
+         "view_count":9908,
+         "accepted_answer_id":42552030,
+         "answer_count":4,
+         "score":10,
+         "last_activity_date":1619876285,
+         "creation_date":1488445994,
+         "last_edit_date":1495541828,
+         "question_id":42551133,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/42551133/fatal-error-unexpectedly-found-nil-while-unwrapping-an-optional-value-in-uitabl",
+         "title":"fatal error: unexpectedly found nil while unwrapping an Optional value in UITableViewCell",
+         "body":"<p>Similar question is asked <a href=\"https://stackoverflow.com/questions/24948302/fatal-error-unexpectedly-found-nil-while-unwrapping-an-optional-value\">here</a> but that doesn't solve this problem for me. I've added a <code>tableView</code> in a <code>ViewController</code>. Made extended the class with it's dataSource and Delegate and added the required methods for it.<br />Then I made a prototype cell in this table (Not the separate .xib for it) and made a class for that <code>TableViewCell</code> and collected the <code>@IBOutlet</code>:</p>\n\n<pre><code>    @IBOutlet weak var titleOfAccount: UILabel!\n    @IBOutlet weak var lastModified: UILabel!\n\n    @IBOutlet weak var accountImage: UIImageView!\n    @IBOutlet weak var cellView: UIView!\n</code></pre>\n\n<p>Then in <code>cellForRowAt</code> method of table view when I wrote </p>\n\n<pre><code>cell.titleOfAccount.text = \"Hello World\"\ncell.lastModified.text = \"Last Modified: 21 May 2017\"\n</code></pre>\n\n<p>and ran the code it crashed with this error.</p>\n\n<blockquote>\n  <p>fatal error: unexpectedly found nil while unwrapping an Optional value</p>\n</blockquote>\n\n<p>What I did after searching here and there I went back to <code>tableViewCell</code> class and changed <code>!</code> to <code>?</code> and updated the code in <code>cellForRowAt</code> as:</p>\n\n<pre><code> cell.titleOfAccount?.text = \"Hello World\"\n cell.lastModified?.text = \"Last Modified: 21 May 2017\"\n</code></pre>\n\n<p>Now when I ran the program it runs successfully but there is no cell appearing in the <code>tableView</code> and I've also implemented the method:</p>\n\n<pre><code>func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {\n        return 3;\n    }\n</code></pre>\n\n<p>Here is the full code of my <code>cellForRowAt</code> method:</p>\n\n<pre><code>func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {\n\n        let cell: AccountsTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! AccountsTableViewCell\n\n        cell.backgroundColor = UIColor.clear\n        cell.clipsToBounds = true\n\n        cell.cellView.layer.shadowColor = UIColor.black.cgColor\n        cell.cellView.layer.shadowOpacity = 1\n        cell.cellView.layer.shadowOffset = CGSize.zero\n        cell.cellView.layer.shadowRadius = 10\n\n        cell.titleOfAccount.text = \"Hello World\"\n        cell.lastModified.text = \"Last Modified: 21 May 2017\"\n        cell.accountImage.image = UIImage(named: \"fb\")\n\n        return cell\n    }\n</code></pre>\n\n<p>P.S. I've also added <code>self.tableView.register(AccountsTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)</code> in <code>viewDidLoad</code></p>\n\n<p><a href=\"https://i.stack.imgur.com/yegtB.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/yegtB.png\" alt=\"enter image description here\"></a>\n<a href=\"https://i.stack.imgur.com/D9MOn.png\" rel=\"noreferrer\"><img src=\"https://i.stack.imgur.com/D9MOn.png\" alt=\"enter image description here\"></a></p>\n"
+      },
+      {
+         "tags":[
+            "ios",
+            "swift",
+            "migration",
+            "type-conversion",
+            "swift3"
+         ],
+         "owner":{
+            "reputation":5746,
+            "user_id":842327,
+            "user_type":"registered",
+            "accept_rate":74,
+            "profile_image":"https://www.gravatar.com/avatar/b569f9d77f7812fed9872fdc778ce331?s=128&d=identicon&r=PG",
+            "display_name":"Zaphod",
+            "link":"https://stackoverflow.com/users/842327/zaphod"
+         },
+         "is_answered":true,
+         "view_count":34053,
+         "answer_count":8,
+         "score":49,
+         "last_activity_date":1619846000,
+         "creation_date":1475741328,
+         "last_edit_date":1558963735,
+         "question_id":39890795,
+         "content_license":"CC BY-SA 4.0",
+         "link":"https://stackoverflow.com/questions/39890795/decimal-to-double-conversion-in-swift-3",
+         "title":"Decimal to Double conversion in Swift 3",
+         "body":"<p>I'm migrating a project from <strong>Swift 2.2</strong> to <strong>Swift 3</strong>, and I'm trying to get rid of old Cocoa data types when possible.</p>\n\n<p>My problem is here: migrating <code>NSDecimalNumber</code> to <code>Decimal</code>.</p>\n\n<p>I used to bridge <code>NSDecimalNumber</code> to <code>Double</code> both ways in <strong>Swift 2.2</strong>:</p>\n\n<pre><code>let double = 3.14\nlet decimalNumber = NSDecimalNumber(value: double)\n\nlet doubleFromDecimal = decimalNumber.doubleValue\n</code></pre>\n\n<p>Now, switching to <strong>Swift 3</strong>:</p>\n\n<pre><code>let double = 3.14\nlet decimal = Decimal(double)\n\nlet doubleFromDecimal = ???\n</code></pre>\n\n<p><code>decimal.doubleValue</code> does not exist, nor <code>Double(decimal)</code>, not even <code>decimal as Double</code>...\nThe only hack I come up with is: </p>\n\n<pre><code>let doubleFromDecimal = (decimal as NSDecimalNumber).doubleValue\n</code></pre>\n\n<p>But that would be completely stupid to try to get rid of <code>NSDecimalNumber</code>, and have to use it once in a while...</p>\n\n<p>Well, either I missed something obvious, and I beg your pardon for wasting your time, or there's a loophole needed to be addressed, in my opinion...</p>\n\n<p>Thanks in advance for your help.</p>\n\n<p><strong>Edit</strong> : Nothing more on the subject on <strong>Swift 4</strong>.</p>\n\n<p><strong>Edit</strong> : Nothing more on the subject on <strong>Swift 5</strong>.</p>\n"
+      },
+      {
+         "tags":[
+            "swift3",
+            "xcode9",
+            "sdwebimage"
+         ],
+         "owner":{
+            "reputation":1407,
+            "user_id":1012277,
+            "user_type":"registered",
+            "accept_rate":25,
+            "profile_image":"https://i.stack.imgur.com/RNbt4.jpg?s=128&g=1",
+            "display_name":"Zulqarnain",
+            "link":"https://stackoverflow.com/users/1012277/zulqarnain"
+         },
+         "is_answered":false,
+         "view_count":1340,
+         "answer_count":4,
+         "score":1,
+         "last_activity_date":1619776415,
+         "creation_date":1509352642,
+         "question_id":47010913,
+         "content_license":"CC BY-SA 3.0",
+         "link":"https://stackoverflow.com/questions/47010913/ld-framework-not-found-sdwebimage",
+         "title":"ld: framework not found SDWebImage",
+         "body":"<p>I am using Xcode Version 9.0.1, If I create a new project and install the sdwebimage using cocoapods, it works fine and give no build error.\nWhere as If I added it to an existing project I am getting:</p>\n\n<pre><code>ld: framework not found SDWebImage\n[![clang: error: linker command failed with exit code 1 (use -v to see invocation)][1]][1]\n</code></pre>\n\n<p><a href=\"https://i.stack.imgur.com/AL3lQ.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/AL3lQ.png\" alt=\"Error screenshot\"></a></p>\n\n<p>This is how my pod file looks like:</p>\n\n<pre><code>    platform :ios, '9.0'\nuse_frameworks!\ntarget 'test' do\n    pod 'SDWebImage', '~&gt; 4.0'\n    pod 'AKSideMenu'\n    pod 'MBProgressHUD', '~&gt; 1.0.0'\n    pod 'FacebookCore'\n    pod 'FacebookLogin'\n    pod 'FacebookShare', :git =&gt; 'https://github.com/1amageek/facebook-sdk-swift'\n    pod 'CMPageControl'\n    pod 'ActionSheetPicker-3.0'\n    pod 'PinCodeTextField', :git =&gt; \"https://github.com/tkach/PinCodeTextField\"\n#    pod 'Google/SignIn'\n    pod 'GoogleSignIn'\n    pod 'Firebase/Core'\n    pod 'Firebase/Auth'\n    pod 'Firebase/Database'\n    pod 'Firebase/Messaging'\n    pod 'Firebase/Storage'\nend\n</code></pre>\n\n<p>I have check the <code>Framework Search Path</code> and <code>Other Linker Flags</code> Everything looks fine. But I am failing to build the project with sdwebimage.\n<a href=\"https://i.stack.imgur.com/U0fFk.png\" rel=\"nofollow noreferrer\"><img src=\"https://i.stack.imgur.com/U0fFk.png\" alt=\"Framework Search Paths\"></a></p>\n"
+      }
+   ],
+   "has_more":true,
+   "quota_max":300,
+   "quota_remaining":295
+}
