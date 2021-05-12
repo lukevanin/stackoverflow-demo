@@ -7,6 +7,9 @@
 
 import UIKit
 
+import StackOverflowAPI
+
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -31,7 +34,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
-        let model = SearchModel()
+        let baseURL = URL(string: "https://api.stackexchange.com/2.2/")!
+        
+        let urlSession = URLSession.shared
+        
+        let model = SearchModel(
+            configuration: SearchModel.Configuration(
+                maximumResults: 20
+            ),
+            service: QuestionsService(
+                baseURL: baseURL,
+                session: urlSession
+            )
+        )
         let viewController = SearchViewController(
             model: model
         )

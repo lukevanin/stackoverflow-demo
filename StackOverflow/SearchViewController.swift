@@ -20,97 +20,26 @@ struct SearchResultViewModel: Hashable, Identifiable {
 }
 
 
-enum SearchResults {
+struct SearchResults {
+    let tags: [String]
+    let items: [SearchResultViewModel]
+}
+
+
+enum SearchStatus {
     case empty
-    case results([SearchResultViewModel])
+    case results(SearchResults)
     case error(String)
 }
 
 
 protocol ISearchModel {
-    var results: AnyPublisher<SearchResults, Never> { get }
+    var results: AnyPublisher<SearchStatus, Never> { get }
     func search(query: String) -> Void
 }
 
 
 private let checkmarkImage = UIImage(systemName: "checkmark")
-
-
-///
-///
-///
-final class SearchPlaceholderView: UIView {
-    
-    var caption: String? {
-        get {
-            captionLabel.text
-        }
-        set {
-            captionLabel.text = newValue
-        }
-    }
-    
-    private let iconImageView: UIImageView = {
-        let view = UIImageView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleAspectFit
-        view.tintColor = .systemGray
-        view.image = UIImage(systemName: "magnifyingglass")
-        return view
-    }()
-
-    private let captionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.adjustsFontForContentSizeCategory = true
-        label.textAlignment = .center
-        label.textColor = .systemGray
-        return label
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .systemGroupedBackground
-        let layout: UIStackView = {
-            let layout = UIStackView(
-                arrangedSubviews: [
-                    iconImageView,
-                    captionLabel,
-                ]
-            )
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .vertical
-            layout.spacing = 16
-            layout.alignment = .center
-            return layout
-        }()
-        addSubview(layout)
-        NSLayoutConstraint.activate([
-            iconImageView.widthAnchor.constraint(
-                equalToConstant: 64
-            ),
-            iconImageView.heightAnchor.constraint(
-                equalTo: iconImageView.widthAnchor
-            ),
-            
-            layout.widthAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.widthAnchor,
-                constant: -32
-            ),
-            layout.centerXAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.centerXAnchor
-            ),
-            layout.centerYAnchor.constraint(
-                equalTo: centerYAnchor
-            ),
-        ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 
 
 ///
@@ -191,7 +120,6 @@ final class SearchResultTableViewCell: UITableViewCell {
             let layout = UIStackView(
                 arrangedSubviews: [
                     titleLabel,
-                    VerticalSpacerView(),
                     ownerLabel,
                 ]
             )
@@ -199,6 +127,7 @@ final class SearchResultTableViewCell: UITableViewCell {
             layout.axis = .vertical
             layout.spacing = 8
             layout.alignment = .leading
+            layout.distribution = .equalSpacing
             return layout
         }()
         let contentLayout: UIStackView = {
@@ -265,14 +194,44 @@ final class SearchResultTableViewCell: UITableViewCell {
 ///
 final class SearchViewController: UITableViewController {
     
-    private let placeholderView: SearchPlaceholderView
+    private let placeholderView: ContentPlaceholderView = {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-placeholder", comment: "")
+        view.iconImage = UIImage(systemName: "magnifyingglass")
+        return view
+    }()
+    
+    private let activeView: ContentPlaceholderView = {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-activity", comment: "")
+        view.activityIndicatorVisible = true
+        return view
+    }()
+
+    private let emptyView: ContentPlaceholderView = {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-empty", comment: "")
+        view.iconImage = UIImage(systemName: "list.bullet")
+        return view
+    }()
+    
+    private let errorView: ContentPlaceholderView = {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-error", comment: "")
+        view.iconImage = UIImage(systemName: "wifi.exclamationmark")
+        return view
+    }()
+
     private let searchController: UISearchController
     private let model: ISearchModel
     private var resultsCancellable: AnyCancellable?
     private var tableDataSource: UITableViewDiffableDataSource<Int, SearchResultViewModel>?
 
     init(model: ISearchModel) {
-        self.placeholderView = SearchPlaceholderView(frame: .zero)
         self.searchController = UISearchController(searchResultsController: nil)
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -315,10 +274,7 @@ final class SearchViewController: UITableViewController {
         let cellIdentifier = "ResultCell"
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
-        placeholderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        placeholderView.frame = tableView.bounds
         tableView.autoresizesSubviews = true
-        tableView.backgroundView = placeholderView
         tableView.tableFooterView = UIView()
         
         tableDataSource = UITableViewDiffableDataSource<Int, SearchResultViewModel>(
@@ -359,7 +315,14 @@ final class SearchViewController: UITableViewController {
         resultsCancellable = nil
     }
     
-    private func updateSearchResults(results: SearchResults) {
+    private func performQuery(query: String) {
+        #warning("TODO: Show activity indicator if query is non-empty")
+        setBackground(activeView)
+        setResults([], animated: true)
+        model.search(query: query)
+    }
+
+    private func updateSearchResults(results: SearchStatus) {
         switch results {
         case .empty:
             showEmptyViewState()
@@ -371,21 +334,35 @@ final class SearchViewController: UITableViewController {
     }
     
     private func showEmptyViewState() {
-        placeholderView.isHidden = false
-        placeholderView.caption = NSLocalizedString("search-placeholder", comment: "")
+        setBackground(placeholderView)
         setResults([], animated: true)
     }
     
     private func showErrorViewState(_ error: String) {
-        
+        errorView.caption = String(format: NSLocalizedString("search-error %@", comment: ""), error)
+        setBackground(errorView)
+        setResults([], animated: true)
     }
     
-    private func showResultsViewState(_ results: [SearchResultViewModel]) {
-        placeholderView.isHidden = true
-        setResults(results, animated: true)
+    private func showResultsViewState(_ results: SearchResults) {
+        if results.items.count == 0 {
+            emptyView.caption = String(format: NSLocalizedString("search-empty %@", comment: ""), results.tags.joined(separator: ", "))
+            setBackground(emptyView)
+        }
+        else {
+            setBackground(nil)
+        }
+        setResults(results.items, animated: true)
+    }
+    
+    private func setBackground(_ backgroundView: UIView?) {
+        dispatchPrecondition(condition: .onQueue(.main))
+        backgroundView?.frame = tableView.bounds
+        tableView.backgroundView = backgroundView
     }
     
     private func setResults(_ results: [SearchResultViewModel], animated: Bool) {
+        dispatchPrecondition(condition: .onQueue(.main))
         var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResultViewModel>()
         if results.count > 0 {
             snapshot.appendSections([0])
@@ -413,10 +390,10 @@ extension SearchViewController: UISearchControllerDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        model.search(query: searchController.searchBar.text ?? "")
+        performQuery(query: searchController.searchBar.text ?? "")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        model.search(query: "")
+        performQuery(query: "")
     }
 }

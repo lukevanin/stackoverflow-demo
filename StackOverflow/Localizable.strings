@@ -9,3 +9,6 @@
 "search-prompt" = "Search";
 "asked-by %@" = "asked by %@";
 "search-placeholder" = "StackOverflow Search";
+"search-empty %@" = "No questions including tags: %@";
+"search-error %@" = "Oops! Something broke. %@";
+"search-activity" = "Searching...";
