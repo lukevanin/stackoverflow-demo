@@ -15,6 +15,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else {
             return
         }
+        
+        let themeColor = UIColor(named: "ThemeColor")
+        
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.barTintColor = themeColor
+        navigationBarAppearance.barStyle = .black
+        navigationBarAppearance.isTranslucent = false
+        
+        let searchBarAppearance = UISearchBar.appearance()
+        searchBarAppearance.tintColor = .white
+
+        let searchBarTextFieldAppearance = UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+        searchBarTextFieldAppearance.defaultTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
+        
         let model = SearchModel()
         let viewController = SearchViewController(
             model: model
@@ -22,6 +38,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController(
             rootViewController: viewController
         )
+        navigationController.navigationBar.barStyle = .black
         #warning("TODO: Collapse title area")
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController

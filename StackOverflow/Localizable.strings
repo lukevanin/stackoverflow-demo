@@ -6,5 +6,6 @@
   
 */
 
-"search-placeholder" = "Search";
+"search-prompt" = "Search";
 "asked-by %@" = "asked by %@";
+"search-placeholder" = "StackOverflow Search";
