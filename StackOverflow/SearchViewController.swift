@@ -35,6 +35,7 @@ enum SearchStatus {
 
 protocol ISearchModel {
     var results: AnyPublisher<SearchStatus, Never> { get }
+    func refresh()
     func search(query: String) -> Void
 }
 
@@ -225,7 +226,7 @@ final class SearchViewController: UITableViewController {
         view.iconImage = UIImage(systemName: "wifi.exclamationmark")
         return view
     }()
-
+    
     private let searchController: UISearchController
     private let model: ISearchModel
     private var resultsCancellable: AnyCancellable?
@@ -243,7 +244,7 @@ final class SearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
         searchController.searchBar.autocapitalizationType = .none
@@ -270,12 +271,25 @@ final class SearchViewController: UITableViewController {
         // Monitor when the search button is tapped, and start/end editing.
         searchController.searchBar.delegate = self
         
+        // Configure refresh control (pull-down to refresh)
+        refreshControl = UIRefreshControl()
+        refreshControl?.addAction(
+            UIAction { [weak self] _ in
+                guard let self = self else {
+                    return
+                }
+                self.model.refresh()
+            },
+            for: .valueChanged
+        )
+        
         // Configure table view
         let cellIdentifier = "ResultCell"
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
         tableView.autoresizesSubviews = true
         tableView.tableFooterView = UIView()
+        tableView.refreshControl = refreshControl
         
         tableDataSource = UITableViewDiffableDataSource<Int, SearchResultViewModel>(
             tableView: tableView,
@@ -363,6 +377,7 @@ final class SearchViewController: UITableViewController {
     
     private func setResults(_ results: [SearchResultViewModel], animated: Bool) {
         dispatchPrecondition(condition: .onQueue(.main))
+        refreshControl?.endRefreshing()
         var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResultViewModel>()
         if results.count > 0 {
             snapshot.appendSections([0])
