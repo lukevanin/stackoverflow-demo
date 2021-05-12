@@ -64,7 +64,7 @@ public struct QuestionsResponse: Decodable {
         public let score: Int
         public let lastActivityDate: UInt64
         public let creationDate: UInt64
-        public let contentLicense: String
+        public let contentLicense: String?
         public let link: URL
         public let title: String
         public let body: String

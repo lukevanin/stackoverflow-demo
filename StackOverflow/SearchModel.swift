@@ -61,13 +61,12 @@ private final class SearchState: AnyState {
         requestCancellable = context.service
             .getQuestions(request)
             .map { response -> SearchStatus in
-                #warning("TODO: Parse URL encoded charaters, e.g. &#39;")
                 let items = response
                     .items
                     .map { item in
                         SearchResultViewModel(
                             id: String(item.questionId),
-                            title: item.title,
+                            title: item.title.decodeHTMLEntities() ?? item.title,
                             owner: item.owner.displayName,
                             votes: item.score,
                             answers: item.answerCount,

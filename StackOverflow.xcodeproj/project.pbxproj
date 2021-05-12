@@ -25,6 +25,7 @@
 		FC44AAB8264C7EF8004B32A4 /* StackOverflowQuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA2264C7646004B32A4 /* StackOverflowQuestionsService.swift */; };
 		FC44AAB9264C7F05004B32A4 /* CodableTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */; };
 		FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */; };
+		FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		FC44AAAD264C7EEF004B32A4 /* StackOverflowAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackOverflowAPI.h; sourceTree = "<group>"; };
 		FC44AAAE264C7EEF004B32A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPlaceholderView.swift; sourceTree = "<group>"; };
+		FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
 				FC44AA98264C2801004B32A4 /* SpacerView.swift */,
+				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
 				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
 				FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */,
 				FC44AA81264C1EE9004B32A4 /* Assets.xcassets */,
@@ -263,6 +266,7 @@
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
+				FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */,
 				FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 			);
