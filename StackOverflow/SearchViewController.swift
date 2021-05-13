@@ -92,6 +92,7 @@ final class SearchResultTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         let statsLayout: UIStackView = {
             let layout = UIStackView(
                 arrangedSubviews: [
@@ -104,8 +105,10 @@ final class SearchResultTableViewCell: UITableViewCell {
             layout.axis = .vertical
             layout.spacing = 8
             layout.alignment = .leading
+            layout.distribution = .equalSpacing
             return layout
         }()
+        
         let textLayout: UIStackView = {
             let layout = UIStackView(
                 arrangedSubviews: [
@@ -120,6 +123,7 @@ final class SearchResultTableViewCell: UITableViewCell {
             layout.distribution = .equalSpacing
             return layout
         }()
+        
         let contentLayout: UIStackView = {
             let layout = UIStackView(
                 arrangedSubviews: [
@@ -130,11 +134,34 @@ final class SearchResultTableViewCell: UITableViewCell {
             )
             layout.translatesAutoresizingMaskIntoConstraints = false
             layout.axis = .horizontal
-            layout.spacing = 8
-            layout.alignment = .center
+            layout.spacing = 16
+            layout.alignment = .fill
             return layout
         }()
-        contentView.addSubview(contentLayout)
+        
+        let contentContainer: UIView = {
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.backgroundColor = UIColor(named: "PrimaryBackgroundColor")
+            view.layoutMargins = UIEdgeInsets(
+                top: 8,
+                left: 16,
+                bottom: 8,
+                right: 16
+            )
+            view.addSubview(contentLayout)
+            return view
+        }()
+        
+        let topDivider = HorizontalDividerView()
+        
+        let bottomDivider = HorizontalDividerView()
+
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        contentView.addSubview(contentContainer)
+        contentView.addSubview(topDivider)
+        contentView.addSubview(bottomDivider)
         NSLayoutConstraint.activate([
             answeredImageView.widthAnchor.constraint(
                 equalToConstant: 20
@@ -143,23 +170,56 @@ final class SearchResultTableViewCell: UITableViewCell {
                 equalTo: answeredImageView.heightAnchor
             ),
             
-            statsLayout.widthAnchor.constraint(equalToConstant: 100),
-            
-            contentLayout.leftAnchor .constraint(
-                equalToSystemSpacingAfter: contentView.leftAnchor,
-                multiplier: 1
+            statsLayout.widthAnchor.constraint(
+                equalToConstant: 100
             ),
-            contentView.rightAnchor.constraint(
-                equalToSystemSpacingAfter: contentLayout.rightAnchor,
-                multiplier: 1
+                        
+            topDivider.leftAnchor .constraint(
+                equalTo: contentContainer.leftAnchor
+            ),
+            topDivider.rightAnchor.constraint(
+                equalTo: contentContainer.rightAnchor
+            ),
+            topDivider.bottomAnchor.constraint(
+                equalTo: contentContainer.topAnchor
+            ),
+            
+            bottomDivider.leftAnchor .constraint(
+                equalTo: contentContainer.leftAnchor
+            ),
+            bottomDivider.rightAnchor.constraint(
+                equalTo: contentContainer.rightAnchor
+            ),
+            bottomDivider.topAnchor.constraint(
+                equalTo: contentContainer.bottomAnchor
+            ),
+
+            contentLayout.leftAnchor .constraint(
+                equalTo: contentContainer.layoutMarginsGuide.leftAnchor
+            ),
+            contentLayout.rightAnchor.constraint(
+                equalTo: contentContainer.layoutMarginsGuide.rightAnchor
             ),
             contentLayout.topAnchor.constraint(
-                equalToSystemSpacingBelow: contentView.topAnchor,
-                multiplier: 1
+                equalTo: contentContainer.layoutMarginsGuide.topAnchor
             ),
-            contentView.bottomAnchor.constraint(
-                equalToSystemSpacingBelow: contentLayout.bottomAnchor,
-                multiplier: 1
+            contentLayout.bottomAnchor.constraint(
+                equalTo: contentContainer.layoutMarginsGuide.bottomAnchor
+            ),
+
+            contentContainer.leftAnchor .constraint(
+                equalTo: leftAnchor
+            ),
+            contentContainer.rightAnchor.constraint(
+                equalTo: rightAnchor
+            ),
+            contentContainer.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: 8
+            ),
+            contentContainer.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -8
             ),
         ])
     }
@@ -183,46 +243,23 @@ final class SearchResultTableViewCell: UITableViewCell {
 /// Search view controller used to display search results.
 ///
 final class SearchViewController: UITableViewController {
-    
-    private let placeholderView: ContentPlaceholderView = {
-        let view = ContentPlaceholderView(frame: .zero)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.caption = NSLocalizedString("search-placeholder", comment: "")
-        view.iconImage = UIImage(systemName: "magnifyingglass")
-        return view
-    }()
-    
-    private let activeView: ContentPlaceholderView = {
-        let view = ContentPlaceholderView(frame: .zero)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.caption = NSLocalizedString("search-activity", comment: "")
-        view.activityIndicatorVisible = true
-        return view
-    }()
 
-    private let emptyView: ContentPlaceholderView = {
-        let view = ContentPlaceholderView(frame: .zero)
+    private let backgroundView: BackgroundContainerView = {
+        let view = BackgroundContainerView(frame: .zero)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.caption = NSLocalizedString("search-empty", comment: "")
-        view.iconImage = UIImage(systemName: "list.bullet")
         return view
     }()
     
-    private let errorView: ContentPlaceholderView = {
-        let view = ContentPlaceholderView(frame: .zero)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.caption = NSLocalizedString("search-error", comment: "")
-        view.iconImage = UIImage(systemName: "wifi.exclamationmark")
+    private let searchBar: UISearchBar = {
+        let view = UISearchBar(frame: .zero)
         return view
     }()
     
-    private let searchController: UISearchController
     private let model: ISearchModel
     private var resultsCancellable: AnyCancellable?
     private var tableDataSource: UITableViewDiffableDataSource<Int, SearchResultViewModel>?
 
     init(model: ISearchModel) {
-        self.searchController = UISearchController(searchResultsController: nil)
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -234,31 +271,27 @@ final class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.searchTextField.placeholder = NSLocalizedString("search-prompt", comment: "")
-        searchController.searchBar.returnKeyType = .done
+        searchBar.autocapitalizationType = .none
+        searchBar.searchTextField.placeholder = NSLocalizedString("search-prompt", comment: "")
+        searchBar.returnKeyType = .done
+        searchBar.tintColor = UIColor(named: "ThemeTextColor")
+        searchBar.showsCancelButton = true
         
-        searchController.searchBar.tintColor = .white
-        
-        let searchTextField = searchController.searchBar.searchTextField
-        searchTextField.backgroundColor = .white
-        searchTextField.leftView?.tintColor = UIColor.systemGray
+        let searchTextField = searchBar.searchTextField
+        searchTextField.backgroundColor = UIColor(named: "PrimaryBackgroundColor")
+        searchTextField.leftView?.tintColor = UIColor(named: "PrimaryTextColor")?.withAlphaComponent(0.5)
         searchTextField.tintColor = UIColor(named: "ThemeColor")
-
+        searchTextField.textColor = UIColor(named: "PrimaryTextColor")
 
         // Place the search bar in the navigation bar.
-        navigationItem.searchController = searchController
-            
-        // Make the search bar always visible.
-        navigationItem.hidesSearchBarWhenScrolling = false
-
-        // Monitor when the search controller is presented and dismissed.
-        searchController.delegate = self
+        navigationItem.titleView = {
+            let containerView = SearchBarContainerView(customSearchBar: searchBar)
+            containerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44)
+            return containerView
+        }()
 
         // Monitor when the search button is tapped, and start/end editing.
-        searchController.searchBar.delegate = self
+        searchBar.delegate = self
         
         // Configure refresh control (pull-down to refresh)
         refreshControl = UIRefreshControl()
@@ -276,9 +309,19 @@ final class SearchViewController: UITableViewController {
         let cellIdentifier = "ResultCell"
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
         
+        tableView.backgroundColor = UIColor(named: "TertiaryBackgroundColor")
         tableView.autoresizesSubviews = true
-        tableView.tableFooterView = UIView()
+        tableView.keyboardDismissMode = .onDrag
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 80 + 16
+        tableView.backgroundView = backgroundView
         tableView.refreshControl = refreshControl
+        tableView.tableHeaderView = {
+            let frame = CGRect(x: 0, y: 0, width: 0, height: 16)
+            let view = UIView(frame: frame)
+            return view
+        }()
+        tableView.tableFooterView = UIView()
         
         tableDataSource = UITableViewDiffableDataSource<Int, SearchResultViewModel>(
             tableView: tableView,
@@ -297,6 +340,7 @@ final class SearchViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         
         // Observe the model and update the UI
         resultsCancellable = model
@@ -319,8 +363,9 @@ final class SearchViewController: UITableViewController {
     }
     
     private func performQuery(query: String) {
-        #warning("TODO: Show activity indicator if query is non-empty")
-        setBackground(activeView)
+        if query.isEmpty == false {
+            setBackground(activeView())
+        }
         setResults([], animated: true)
         model.search(query: query)
     }
@@ -337,31 +382,23 @@ final class SearchViewController: UITableViewController {
     }
     
     private func showEmptyViewState() {
-        setBackground(placeholderView)
+        setBackground(placeholderView())
         setResults([], animated: true)
     }
     
     private func showErrorViewState(_ error: String) {
-        errorView.caption = String(format: NSLocalizedString("search-error %@", comment: ""), error)
-        setBackground(errorView)
+        setBackground(errorView(error: error))
         setResults([], animated: true)
     }
     
     private func showResultsViewState(_ results: SearchResults) {
         if results.items.count == 0 {
-            emptyView.caption = String(format: NSLocalizedString("search-empty %@", comment: ""), results.tags.joined(separator: ", "))
-            setBackground(emptyView)
+            setBackground(emptyView(results: results))
         }
         else {
             setBackground(nil)
         }
         setResults(results.items, animated: true)
-    }
-    
-    private func setBackground(_ backgroundView: UIView?) {
-        dispatchPrecondition(condition: .onQueue(.main))
-        backgroundView?.frame = tableView.bounds
-        tableView.backgroundView = backgroundView
     }
     
     private func setResults(_ results: [SearchResultViewModel], animated: Bool) {
@@ -375,29 +412,64 @@ final class SearchViewController: UITableViewController {
         tableDataSource?.apply(snapshot, animatingDifferences: animated, completion: nil)
     }
     
-    // UITableViewController
+    private func setBackground(_ view: UIView?) {
+        dispatchPrecondition(condition: .onQueue(.main))
+        backgroundView.contentView = view
+//        backgroundView?.frame = tableView.bounds
+//        tableView.backgroundView = backgroundView
+    }
+
+    private func placeholderView() -> ContentPlaceholderView {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-placeholder", comment: "")
+        view.iconImage = UIImage(systemName: "magnifyingglass")
+        return view
+    }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+    private func activeView() -> ContentPlaceholderView {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.caption = NSLocalizedString("search-activity", comment: "")
+        view.activityIndicatorVisible = true
+        return view
     }
-}
 
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        // model.search(query: searchController.searchBar.text ?? "")
+    private func emptyView(results: SearchResults) -> ContentPlaceholderView {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.iconImage = UIImage(systemName: "list.bullet")
+        view.caption = Localization.shared.formattedString(named: "search-empty %@", results.tags.joined(separator: ", "))
+        return view
     }
-}
-
-extension SearchViewController: UISearchControllerDelegate {
-
+    
+    private func errorView(error: String) -> ContentPlaceholderView {
+        let view = ContentPlaceholderView(frame: .zero)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.iconImage = UIImage(systemName: "wifi.exclamationmark")
+        view.caption = Localization.shared.formattedString(named: "search-error %@", error)
+        return view
+    }
+    
+    // Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let model = tableDataSource?.itemIdentifier(for: indexPath) else {
+            return
+        }
+        let viewController = QuestionViewController(model: model)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        performQuery(query: searchController.searchBar.text ?? "")
+        performQuery(query: searchBar.text ?? "")
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.searchTextField.resignFirstResponder()
         performQuery(query: "")
     }
 }

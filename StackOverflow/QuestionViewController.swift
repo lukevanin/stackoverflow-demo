@@ -13,36 +13,40 @@ final class QuestionViewController: UIViewController {
     private let headerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .body)
+        label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 2
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
     private let authorNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 1
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
     private let authorReputationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 1
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
     private let askedDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 1
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
@@ -53,16 +57,17 @@ final class QuestionViewController: UIViewController {
         view.clipsToBounds = true
         view.layer.cornerRadius = 6
         view.layer.cornerCurve = .continuous
-        view.backgroundColor = .magenta
+        view.backgroundColor = .systemGray
         return view
     }()
 
     private let tagsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
+        label.font = UIFont.systemFont(ofSize: 10, weight: .bold)
         label.adjustsFontForContentSizeCategory = true
         label.numberOfLines = 1
+        label.textColor = UIColor(named: "SecondaryTextColor")
         return label
     }()
     
@@ -71,9 +76,9 @@ final class QuestionViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isEditable = false
         view.contentInset = UIEdgeInsets(
-            top: 8,
+            top: 16,
             left: 16,
-            bottom: 8,
+            bottom: 16,
             right: 16
         )
         view.textContainerInset = .zero
@@ -99,7 +104,7 @@ final class QuestionViewController: UIViewController {
         let headerContainer: UIView = {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .systemGray
+            view.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
             view.addSubview(headerLabel)
             return view
         }()
@@ -116,6 +121,7 @@ final class QuestionViewController: UIViewController {
             layout.axis = .vertical
             layout.spacing = 8
             layout.alignment = .leading
+            layout.distribution = .equalSpacing
             return layout
         }()
 
@@ -144,7 +150,13 @@ final class QuestionViewController: UIViewController {
         let authorContainer: UIView = {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = .systemGray
+            view.layoutMargins = UIEdgeInsets(
+                top: 8,
+                left: 16,
+                bottom: 8,
+                right: 16
+            )
+            view.backgroundColor = UIColor(named: "SecondaryBackgroundColor")
             view.addSubview(authorLayout)
             return view
         }()
@@ -153,8 +165,11 @@ final class QuestionViewController: UIViewController {
             let layout = UIStackView(
                 arrangedSubviews: [
                     headerContainer,
+                    HorizontalDividerView(),
                     contentTextView,
+                    HorizontalDividerView(),
                     tagsContainer,
+                    HorizontalDividerView(),
                     authorContainer,
                 ]
             )
@@ -206,23 +221,19 @@ final class QuestionViewController: UIViewController {
             
             // Author
             authorLayout.heightAnchor.constraint(
-                greaterThanOrEqualToConstant: 65
+                equalToConstant: 65 - (authorContainer.layoutMargins.top + authorContainer.layoutMargins.bottom)
             ),
             authorLayout.leftAnchor.constraint(
-                equalToSystemSpacingAfter: authorContainer.leftAnchor,
-                multiplier: 2
+                equalTo: authorContainer.layoutMarginsGuide.leftAnchor
             ),
-            authorContainer.rightAnchor.constraint(
-                equalToSystemSpacingAfter: authorLayout.rightAnchor,
-                multiplier: 2
+            authorLayout.rightAnchor.constraint(
+                equalTo: authorContainer.layoutMarginsGuide.rightAnchor
             ),
             authorLayout.topAnchor.constraint(
-                equalToSystemSpacingBelow: authorContainer.topAnchor,
-                multiplier: 1
+                equalTo: authorContainer.layoutMarginsGuide.topAnchor
             ),
-            authorContainer.safeAreaLayoutGuide.bottomAnchor.constraint(
-                equalToSystemSpacingBelow: authorLayout.bottomAnchor,
-                multiplier: 1
+            authorLayout.bottomAnchor.constraint(
+                equalTo: authorContainer.layoutMarginsGuide.bottomAnchor
             ),
             authorProfileImageView.widthAnchor.constraint(
                 equalTo: authorProfileImageView.heightAnchor
@@ -249,35 +260,25 @@ final class QuestionViewController: UIViewController {
     }
     
     private func invalidateView() {
-        // Format the HTML content into a rich text string
-        let data = model.content.data(using: .utf8)
-        let content: NSAttributedString = data.flatMap { data -> NSAttributedString? in
-            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                .documentType: NSAttributedString.DocumentType.html,
-                .characterEncoding: String.Encoding.utf8.rawValue
-            ]
-            return try? NSAttributedString(
-                data: data,
-                options: options,
-                documentAttributes: nil
-            )
-        } ?? NSAttributedString(string: model.content)
-        let formattedContent: NSAttributedString = {
-            #warning("TODO: Customize foreground text")
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.preferredFont(forTextStyle: .body),
-                .foregroundColor: UIColor.label
-            ]
-            let range = NSRange(location: 0, length: content.length)
-            let output = NSMutableAttributedString(attributedString: content)
-            output.setAttributes(attributes, range: range)
-            return output
-        }()
-
-
-        let localization = Localization.shared
+        updateHeader()
+        updateTags()
+        updateProfileImage()
+        updateAuthor()
+        updateReputation()
+        updateDate()
+        updateBody()
+    }
+    
+    private func updateHeader() {
         headerLabel.text = model.title
+    }
+    
+    private func updateAuthor() {
         authorNameLabel.text = model.owner.displayName
+    }
+    
+    private func updateReputation() {
+        let localization = Localization.shared
         if let reputation = model.owner.reputation {
             authorReputationLabel.isHidden = false
             authorReputationLabel.text = localization.formatInteger(reputation)
@@ -285,9 +286,52 @@ final class QuestionViewController: UIViewController {
         else {
             authorReputationLabel.isHidden = true
         }
+    }
+    
+    private func updateDate() {
+        let localization = Localization.shared
         askedDateLabel.text = localization.formattedString(named: "asked-on %@ at %@", localization.formatDate(model.askedDate), localization.formatTime(model.askedDate))
-        contentTextView.attributedText = formattedContent
+    }
+    
+    private func updateTags() {
         tagsLabel.text = model.tags.joined(separator: ", ")
+    }
+    
+    private func updateBody() {
+        let content = model.content
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            let data = content.data(using: .utf8)
+            let content: NSAttributedString = data.flatMap { data -> NSAttributedString? in
+                let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ]
+                return try? NSAttributedString(
+                    data: data,
+                    options: options,
+                    documentAttributes: nil
+                )
+            } ?? NSAttributedString(string: content)
+            let formattedContent: NSAttributedString = {
+                let attributes: [NSAttributedString.Key: Any] = [
+                    .font: UIFont.systemFont(ofSize: 13, weight: .regular),
+                    .foregroundColor: UIColor(named: "PrimaryTextColor") as Any,
+                ]
+                let range = NSRange(location: 0, length: content.length)
+                let output = NSMutableAttributedString(attributedString: content)
+                output.setAttributes(attributes, range: range)
+                return output
+            }()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.contentTextView.attributedText = formattedContent
+            }
+        }
+    }
+    
+    private func updateProfileImage() {
         if let url = model.owner.profileImageURL {
             authorProfileImageView.isHidden = false
             authorProfileImageView.url = url

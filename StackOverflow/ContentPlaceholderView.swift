@@ -55,7 +55,7 @@ final class ContentPlaceholderView: UIView {
         let view = UIActivityIndicatorView(style: .large)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.hidesWhenStopped = true
-        view.color = .systemGray
+        view.color = UIColor(named: "SecondaryTextColor")
         view.isHidden = true
         return view
     }()
@@ -64,7 +64,7 @@ final class ContentPlaceholderView: UIView {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.tintColor = .systemGray
+        view.tintColor = UIColor(named: "SecondaryTextColor")
         view.isHidden = true
         return view
     }()
@@ -75,14 +75,14 @@ final class ContentPlaceholderView: UIView {
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .center
-        label.textColor = .systemGray
+        label.textColor = UIColor(named: "SecondaryTextColor")
         label.numberOfLines = 0
         return label
     }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .systemGroupedBackground
+        backgroundColor = UIColor(named: "SecondaryBackgroundColor")
         let layout: UIStackView = {
             let layout = UIStackView(
                 arrangedSubviews: [

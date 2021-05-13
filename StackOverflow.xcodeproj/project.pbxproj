@@ -15,7 +15,6 @@
 		FC44AA95264C1F86004B32A4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA92264C1F86004B32A4 /* Readme.md */; };
 		FC44AA96264C1F86004B32A4 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA93264C1F86004B32A4 /* sample.json */; };
 		FC44AA97264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */; };
-		FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA98264C2801004B32A4 /* SpacerView.swift */; };
 		FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA9A264C2D24004B32A4 /* SearchModel.swift */; };
 		FC44AAA0264C5DE9004B32A4 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */; };
 		FC44AAA1264C5DE9004B32A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9F264C5DE9004B32A4 /* Localizable.strings */; };
@@ -29,6 +28,10 @@
 		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
 		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
 		FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* ImageLoader.swift */; };
+		FC8967BD264DA2B300F72FDD /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */; };
+		FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */; };
+		FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C0264DBECD00F72FDD /* NavigationController.swift */; };
+		FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +69,6 @@
 		FC44AA92264C1F86004B32A4 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		FC44AA93264C1F86004B32A4 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS Developer Practical Test (1).pdf"; sourceTree = "<group>"; };
-		FC44AA98264C2801004B32A4 /* SpacerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacerView.swift; sourceTree = "<group>"; };
 		FC44AA9A264C2D24004B32A4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		FC44AA9F264C5DE9004B32A4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -80,6 +82,10 @@
 		FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FC8967B8264D133C00F72FDD /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		FC8967BA264D99BB00F72FDD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividerView.swift; sourceTree = "<group>"; };
+		FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainerView.swift; sourceTree = "<group>"; };
+		FC8967C0264DBECD00F72FDD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +137,11 @@
 				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
-				FC44AA98264C2801004B32A4 /* SpacerView.swift */,
 				FC8967BA264D99BB00F72FDD /* ImageLoader.swift */,
+				FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */,
+				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
+				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
+				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
 				FC8967B8264D133C00F72FDD /* Localization.swift */,
 				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
 				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
@@ -271,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */,
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
+				FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */,
 				FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
@@ -280,6 +289,9 @@
 				FC8967B9264D133C00F72FDD /* Localization.swift in Sources */,
 				FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */,
 				FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */,
+				FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */,
+				FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */,
+				FC8967BD264DA2B300F72FDD /* HorizontalDividerView.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

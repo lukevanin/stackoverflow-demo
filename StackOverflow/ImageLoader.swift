@@ -84,7 +84,15 @@ final class URLImageView: UIView {
                 guard let self = self else {
                     return
                 }
-                self.imageView.image = image
+                UIView.transition(
+                    with: self,
+                    duration: 0.2,
+                    options: [.transitionCrossDissolve],
+                    animations: {
+                        self.imageView.image = image
+                    },
+                    completion: nil
+                )
             }
     }
 }
