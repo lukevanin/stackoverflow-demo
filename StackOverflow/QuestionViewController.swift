@@ -46,13 +46,14 @@ final class QuestionViewController: UIViewController {
         return label
     }()
     
-    private let authorProfileImageView: UIImageView = {
-        let view = UIImageView()
+    private let authorProfileImageView: URLImageView = {
+        let view = URLImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 6
         view.layer.cornerCurve = .continuous
+        view.backgroundColor = .magenta
         return view
     }()
 
@@ -223,6 +224,9 @@ final class QuestionViewController: UIViewController {
                 equalToSystemSpacingBelow: authorLayout.bottomAnchor,
                 multiplier: 1
             ),
+            authorProfileImageView.widthAnchor.constraint(
+                equalTo: authorProfileImageView.heightAnchor
+            ),
 
             // View
             layout.leftAnchor.constraint(
@@ -284,7 +288,12 @@ final class QuestionViewController: UIViewController {
         askedDateLabel.text = localization.formattedString(named: "asked-on %@ at %@", localization.formatDate(model.askedDate), localization.formatTime(model.askedDate))
         contentTextView.attributedText = formattedContent
         tagsLabel.text = model.tags.joined(separator: ", ")
-        #warning("TODO: Load the author profile image")
-        authorProfileImageView.isHidden = true
+        if let url = model.owner.profileImageURL {
+            authorProfileImageView.isHidden = false
+            authorProfileImageView.url = url
+        }
+        else {
+            authorProfileImageView.isHidden = true
+        }
     }
 }

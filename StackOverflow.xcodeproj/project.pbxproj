@@ -27,8 +27,8 @@
 		FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */; };
 		FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */; };
 		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
-		FC8967B7264D0D5300F72FDD /* MarginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B6264D0D5300F72FDD /* MarginTextView.swift */; };
 		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
+		FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +78,8 @@
 		FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPlaceholderView.swift; sourceTree = "<group>"; };
 		FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
-		FC8967B6264D0D5300F72FDD /* MarginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginTextView.swift; sourceTree = "<group>"; };
 		FC8967B8264D133C00F72FDD /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		FC8967BA264D99BB00F72FDD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
 				FC44AA98264C2801004B32A4 /* SpacerView.swift */,
-				FC8967B6264D0D5300F72FDD /* MarginTextView.swift */,
+				FC8967BA264D99BB00F72FDD /* ImageLoader.swift */,
 				FC8967B8264D133C00F72FDD /* Localization.swift */,
 				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
 				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
@@ -273,8 +273,8 @@
 			files = (
 				FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */,
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
+				FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
-				FC8967B7264D0D5300F72FDD /* MarginTextView.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
 				FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */,
 				FC8967B9264D133C00F72FDD /* Localization.swift in Sources */,
