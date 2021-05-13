@@ -26,6 +26,9 @@
 		FC44AAB9264C7F05004B32A4 /* CodableTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */; };
 		FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */; };
 		FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */; };
+		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
+		FC8967B7264D0D5300F72FDD /* MarginTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B6264D0D5300F72FDD /* MarginTextView.swift */; };
+		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		FC44AAAE264C7EEF004B32A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPlaceholderView.swift; sourceTree = "<group>"; };
 		FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
+		FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		FC8967B6264D0D5300F72FDD /* MarginTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginTextView.swift; sourceTree = "<group>"; };
+		FC8967B8264D133C00F72FDD /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +128,12 @@
 				FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */,
 				FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */,
 				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
+				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
 				FC44AA98264C2801004B32A4 /* SpacerView.swift */,
+				FC8967B6264D0D5300F72FDD /* MarginTextView.swift */,
+				FC8967B8264D133C00F72FDD /* Localization.swift */,
 				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
 				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
 				FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */,
@@ -265,9 +274,12 @@
 				FC44AA99264C2801004B32A4 /* SpacerView.swift in Sources */,
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
+				FC8967B7264D0D5300F72FDD /* MarginTextView.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
 				FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */,
+				FC8967B9264D133C00F72FDD /* Localization.swift in Sources */,
 				FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */,
+				FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

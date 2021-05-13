@@ -11,6 +11,27 @@ import Combine
 import StackOverflowAPI
 
 
+struct SearchResultViewModel: Hashable, Identifiable {
+    
+    struct Owner: Hashable {
+        let displayName: String
+        let reputation: Int?
+        let profileImageURL: URL?
+    }
+    
+    let id: String
+    let title: String
+    let owner: Owner
+    let votes: Int
+    let answers: Int
+    let views: Int
+    let answered: Bool
+    let askedDate: Date
+    let content: String
+    let tags: [String]
+}
+
+
 private class AnyState {
     weak var context: SearchModel!
     
@@ -67,11 +88,18 @@ private final class SearchState: AnyState {
                         SearchResultViewModel(
                             id: String(item.questionId),
                             title: item.title.decodeHTMLEntities() ?? item.title,
-                            owner: item.owner.displayName,
+                            owner: SearchResultViewModel.Owner(
+                                displayName: item.owner.displayName,
+                                reputation: item.owner.reputation,
+                                profileImageURL: item.owner.profileImage
+                            ),
                             votes: item.score,
                             answers: item.answerCount,
                             views: item.viewCount,
-                            answered: item.isAnswered
+                            answered: item.isAnswered,
+                            askedDate: Date(timestamp: item.creationDate),
+                            content: item.body,
+                            tags: item.tags
                         )
                     }
                     .prefix(maximumResults)

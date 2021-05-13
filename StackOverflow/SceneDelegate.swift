@@ -47,8 +47,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 session: urlSession
             )
         )
-        let viewController = SearchViewController(
-            model: model
+//        let viewController = SearchViewController(
+//            model: model
+//        )
+        let viewController = QuestionViewController(
+            model: SearchResultViewModel(
+                id: "69",
+                title: "What is the answer to the ultimate question of life, the universe, and everything?",
+                owner: SearchResultViewModel.Owner(
+                    displayName: "Deep Thought",
+                    reputation: 101,
+                    profileImageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/IBM_Blue_Gene_P_supercomputer.jpg/330px-IBM_Blue_Gene_P_supercomputer.jpg")!
+                ),
+                votes: 12,
+                answers: 42,
+                views: 1,
+                answered: false,
+                askedDate: Date(),
+                content: "What is the answer to the ultimate question of life, the universe, and everything? Need this ASAP. kThx.",
+                tags: ["life", "universe", "yolo"]
+            )
         )
         let navigationController = UINavigationController(
             rootViewController: viewController

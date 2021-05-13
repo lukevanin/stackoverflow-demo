@@ -9,17 +9,6 @@ import UIKit
 import Combine
 
 
-struct SearchResultViewModel: Hashable, Identifiable {
-    let id: String
-    let title: String
-    let owner: String
-    let votes: Int
-    let answers: Int
-    let views: Int
-    let answered: Bool
-}
-
-
 struct SearchResults {
     let tags: [String]
     let items: [SearchResultViewModel]
@@ -181,7 +170,7 @@ final class SearchResultTableViewCell: UITableViewCell {
     
     func configure(with viewModel: SearchResultViewModel) {
         titleLabel.text = viewModel.title
-        ownerLabel.text = String(format: NSLocalizedString("asked-by %@", comment: ""), viewModel.owner)
+        ownerLabel.text = String(format: NSLocalizedString("asked-by %@", comment: ""), viewModel.owner.displayName)
         votesLabel.text = String(format: NSLocalizedString("vote-count %lld", comment: ""), viewModel.votes)
         answersLabel.text = String(format: NSLocalizedString("answer-count %lld", comment: ""), viewModel.answers)
         viewsLabel.text = String(format: NSLocalizedString("view-count %lld", comment: ""), viewModel.answers)

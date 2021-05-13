@@ -8,7 +8,9 @@
 
 "search-prompt" = "Search";
 "asked-by %@" = "asked by %@";
+"asked-on %@ at %@" = "asked %@ at %@";
 "search-placeholder" = "StackOverflow Search";
 "search-empty %@" = "No questions including tags: %@";
 "search-error %@" = "Oops! Something broke. %@";
 "search-activity" = "Searching...";
+"question-title" = "Question";
