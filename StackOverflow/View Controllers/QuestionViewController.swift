@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SafariServices
 import Combine
 
 import Layout
@@ -117,6 +118,8 @@ final class QuestionViewController: UIViewController {
         navigationItem.title = Localization.shared.string(named: "question-title")
 
         view.backgroundColor = UIColor(named: "PrimaryBackgroundColor")!
+        
+        contentWebView.navigationDelegate = self
 
         // Layout
         UIStackView.vertical(
@@ -258,6 +261,28 @@ final class QuestionViewController: UIViewController {
         }
         else {
             authorProfileImageView.isHidden = true
+        }
+    }
+    
+    private func navigate(to url: URL) {
+        dispatchPrecondition(condition: .onQueue(.main))
+        let configuration = SFSafariViewController.Configuration()
+        let viewController = SFSafariViewController(
+            url: url,
+            configuration: configuration
+        )
+        present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension QuestionViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.navigationType == .linkActivated, let url = navigationAction.request.url {
+            decisionHandler(.cancel)
+            navigate(to: url)
+        }
+        else {
+            decisionHandler(.allow)
         }
     }
 }
