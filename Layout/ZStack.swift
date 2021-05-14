@@ -33,16 +33,16 @@ public final class ZStack: UIView {
             addSubview(view)
             NSLayoutConstraint.activate([
                 view.leftAnchor.constraint(
-                    equalTo: layoutMarginsGuide.leftAnchor
+                    equalTo: leftAnchor
                 ),
                 view.rightAnchor.constraint(
-                    equalTo: layoutMarginsGuide.rightAnchor
+                    equalTo: rightAnchor
                 ),
                 view.topAnchor.constraint(
-                    equalTo: layoutMarginsGuide.topAnchor
+                    equalTo: topAnchor
                 ),
                 view.bottomAnchor.constraint(
-                    equalTo: layoutMarginsGuide.bottomAnchor
+                    equalTo: bottomAnchor
                 ),
             ])
         }

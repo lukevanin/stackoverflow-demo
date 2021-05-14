@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 import Combine
 
 import Layout
@@ -84,6 +85,13 @@ final class QuestionViewController: UIViewController {
         return view
     }()
     
+    private let contentWebView: WKWebView = {
+        let configuration = WKWebViewConfiguration()
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let contentActivityView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
         view.color = UIColor(named: "SecondaryTextColor")
@@ -108,7 +116,7 @@ final class QuestionViewController: UIViewController {
         
         navigationItem.title = Localization.shared.string(named: "question-title")
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(named: "PrimaryBackgroundColor")!
 
         // Layout
         UIStackView.vertical(
@@ -121,12 +129,7 @@ final class QuestionViewController: UIViewController {
                     .color(UIColor(named: "SecondaryBackgroundColor")!),
                 HorizontalDividerView(),
                 // Content
-                ZStack(
-                    contents: [
-                        contentTextView,
-                        contentActivityView,
-                    ]
-                ),
+                contentWebView,
                 HorizontalDividerView(),
                 // Tags
                 tagsLabel
@@ -196,29 +199,57 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateBody() {
-        contentActivityView.startAnimating()
-        viewModel
-            .formattedBody()
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] value in
-                guard let self = self else {
-                    return
+        #warning("TODO; Move HTML into template")
+        let html = """
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+            <style>
+                body {
+                    font-family: -apple-system;
+                    font-size: 13px;
+                    background-color: #\(UIColor(named: "PrimaryBackgroundColor")!.hex());
+                    color: #\(UIColor(named: "PrimaryTextColor")!.hex());
+                    padding: 8px;
                 }
-                self.contentActivityView.stopAnimating()
-                UIView.transition(
-                    with: self.view,
-                    duration: 0.25,
-                    options: [.transitionCrossDissolve],
-                    animations: {
-                        self.contentTextView.attributedText = value
-                    },
-                    completion: { _ in
-                        self.contentActivityView.removeFromSuperview()
-                    }
-                )
-            }
-            .store(in: &cancellables)
+                img {
+                    max-width: 100%;
+                }
+            </style>
+            </head>
+            <body>
+            \(viewModel.content)
+            </body>
+            </html>
+        """
+        contentWebView.loadHTMLString(html, baseURL: nil)
     }
+    
+//    private func updateBody()
+//        contentActivityView.startAnimating()
+//        viewModel
+//            .formattedBody()
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] value in
+//                guard let self = self else {
+//                    return
+//                }
+//                self.contentActivityView.stopAnimating()
+//                UIView.transition(
+//                    with: self.view,
+//                    duration: 0.25,
+//                    options: [.transitionCrossDissolve],
+//                    animations: {
+//                        self.contentTextView.attributedText = value
+//                    },
+//                    completion: { _ in
+//                        self.contentActivityView.removeFromSuperview()
+//                    }
+//                )
+//            }
+//            .store(in: &cancellables)
+//    }
     
     private func updateProfileImage() {
         if let url = viewModel.owner.profileImageURL {

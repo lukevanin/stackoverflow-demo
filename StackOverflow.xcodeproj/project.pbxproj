@@ -48,6 +48,7 @@
 		FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */; };
 		FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */; };
 		FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64C264F188100FC01A3 /* ZStack.swift */; };
+		FCCDF64F264F206800FC01A3 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		FCCDF64C264F188100FC01A3 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
+		FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 			children = (
 				FC8967B8264D133C00F72FDD /* Localization.swift */,
 				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
+				FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */,
 				FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
+				FCCDF64F264F206800FC01A3 /* UIKitExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
