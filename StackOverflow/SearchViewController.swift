@@ -8,25 +8,7 @@
 import UIKit
 import Combine
 
-
-struct SearchResults {
-    let tags: [String]
-    let items: [SearchResultViewModel]
-}
-
-
-enum SearchStatus {
-    case empty
-    case results(SearchResults)
-    case error(String)
-}
-
-
-protocol ISearchModel {
-    var results: AnyPublisher<SearchStatus, Never> { get }
-    func refresh()
-    func search(query: String) -> Void
-}
+import Layout
 
 
 private let checkmarkImage = UIImage(systemName: "checkmark")
@@ -40,8 +22,8 @@ final class SearchResultTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.textColor = UIColor(named: "ThemeColor")
         label.numberOfLines = 2
         return label
     }()
@@ -49,8 +31,8 @@ final class SearchResultTableViewCell: UITableViewCell {
     private let ownerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption1)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        label.textColor = UIColor(named: "SecondaryTextColor")
         label.numberOfLines = 1
         return label
     }()
@@ -58,8 +40,8 @@ final class SearchResultTableViewCell: UITableViewCell {
     private let votesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        label.textColor = UIColor(named: "SecondaryTextColor")
         label.numberOfLines = 1
         return label
     }()
@@ -67,8 +49,8 @@ final class SearchResultTableViewCell: UITableViewCell {
     private let answersLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        label.textColor = UIColor(named: "SecondaryTextColor")
         label.numberOfLines = 1
         return label
     }()
@@ -76,8 +58,8 @@ final class SearchResultTableViewCell: UITableViewCell {
     private let viewsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.preferredFont(forTextStyle: .caption2)
-        label.adjustsFontForContentSizeCategory = true
+        label.font = UIFont.systemFont(ofSize: 10, weight: .regular)
+        label.textColor = UIColor(named: "SecondaryTextColor")
         label.numberOfLines = 1
         return label
     }()
@@ -93,147 +75,74 @@ final class SearchResultTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        let statsLayout: UIStackView = {
-            let layout = UIStackView(
-                arrangedSubviews: [
-                    votesLabel,
-                    answersLabel,
-                    viewsLabel,
-                ]
-            )
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .vertical
-            layout.spacing = 8
-            layout.alignment = .leading
-            layout.distribution = .equalSpacing
-            return layout
-        }()
-        
-        let textLayout: UIStackView = {
-            let layout = UIStackView(
-                arrangedSubviews: [
-                    titleLabel,
-                    ownerLabel,
-                ]
-            )
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .vertical
-            layout.spacing = 8
-            layout.alignment = .leading
-            layout.distribution = .equalSpacing
-            return layout
-        }()
-        
-        let contentLayout: UIStackView = {
-            let layout = UIStackView(
-                arrangedSubviews: [
-                    answeredImageView,
-                    textLayout,
-                    statsLayout,
-                ]
-            )
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .horizontal
-            layout.spacing = 16
-            layout.alignment = .fill
-            return layout
-        }()
-        
-        let contentContainer: UIView = {
-            let view = UIView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            view.backgroundColor = UIColor(named: "PrimaryBackgroundColor")
-            view.layoutMargins = UIEdgeInsets(
-                top: 8,
-                left: 16,
-                bottom: 8,
-                right: 16
-            )
-            view.addSubview(contentLayout)
-            return view
-        }()
-        
-        let topDivider = HorizontalDividerView()
-        
-        let bottomDivider = HorizontalDividerView()
-
         backgroundColor = .clear
         contentView.backgroundColor = .clear
-        contentView.addSubview(contentContainer)
-        contentView.addSubview(topDivider)
-        contentView.addSubview(bottomDivider)
-        NSLayoutConstraint.activate([
-            answeredImageView.widthAnchor.constraint(
-                equalToConstant: 20
-            ),
-            answeredImageView.widthAnchor.constraint(
-                equalTo: answeredImageView.heightAnchor
-            ),
-            
-            statsLayout.widthAnchor.constraint(
-                equalToConstant: 100
-            ),
-                        
-            topDivider.leftAnchor .constraint(
-                equalTo: contentContainer.leftAnchor
-            ),
-            topDivider.rightAnchor.constraint(
-                equalTo: contentContainer.rightAnchor
-            ),
-            topDivider.bottomAnchor.constraint(
-                equalTo: contentContainer.topAnchor
-            ),
-            
-            bottomDivider.leftAnchor .constraint(
-                equalTo: contentContainer.leftAnchor
-            ),
-            bottomDivider.rightAnchor.constraint(
-                equalTo: contentContainer.rightAnchor
-            ),
-            bottomDivider.topAnchor.constraint(
-                equalTo: contentContainer.bottomAnchor
-            ),
+        
+        // Background color and padding
+        let backgroundView = UIStackView.vertical(
+            contents: [
+                HorizontalDividerView(),
+                ColorView(
+                    color: UIColor(named: "PrimaryBackgroundColor")!
+                ),
+                HorizontalDividerView(),
+            ]
+        )
+        .margin(
+            insets: UIEdgeInsets(
+                horizontal: 0,
+                vertical: 4
+            )
+        )
+        backgroundView.translatesAutoresizingMaskIntoConstraints = true
+        self.backgroundView = backgroundView
 
-            contentLayout.leftAnchor .constraint(
-                equalTo: contentContainer.layoutMarginsGuide.leftAnchor
-            ),
-            contentLayout.rightAnchor.constraint(
-                equalTo: contentContainer.layoutMarginsGuide.rightAnchor
-            ),
-            contentLayout.topAnchor.constraint(
-                equalTo: contentContainer.layoutMarginsGuide.topAnchor
-            ),
-            contentLayout.bottomAnchor.constraint(
-                equalTo: contentContainer.layoutMarginsGuide.bottomAnchor
-            ),
-
-            contentContainer.leftAnchor .constraint(
-                equalTo: leftAnchor
-            ),
-            contentContainer.rightAnchor.constraint(
-                equalTo: rightAnchor
-            ),
-            contentContainer.topAnchor.constraint(
-                equalTo: contentView.topAnchor,
-                constant: 8
-            ),
-            contentContainer.bottomAnchor.constraint(
-                equalTo: contentView.bottomAnchor,
-                constant: -8
-            ),
-        ])
+        // Content layout
+        UIStackView.horizontal(
+            spacing: 16,
+            alignment: .fill,
+            contents: [
+                answeredImageView
+                    .size(width: 20),
+                UIStackView.vertical(
+                    alignment: .leading,
+                    distribution: .equalSpacing,
+                    contents: [
+                        titleLabel,
+                        ownerLabel,
+                    ]
+                ),
+                UIStackView.vertical(
+                    alignment: .leading,
+                    distribution: .equalSpacing,
+                    contents: [
+                        votesLabel,
+                        answersLabel,
+                        viewsLabel,
+                    ]
+                )
+                .size(width: 100),
+            ]
+        )
+        .margin(
+            insets: UIEdgeInsets(
+                horizontal: 16,
+                vertical: 12
+            )
+        )
+        .add(to: contentView)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with viewModel: SearchResultViewModel) {
+    func configure(with viewModel: SearchViewModel.Results.Item) {
         titleLabel.text = viewModel.title
-        ownerLabel.text = String(format: NSLocalizedString("asked-by %@", comment: ""), viewModel.owner.displayName)
-        votesLabel.text = String(format: NSLocalizedString("vote-count %lld", comment: ""), viewModel.votes)
-        answersLabel.text = String(format: NSLocalizedString("answer-count %lld", comment: ""), viewModel.answers)
-        viewsLabel.text = String(format: NSLocalizedString("view-count %lld", comment: ""), viewModel.answers)
+        ownerLabel.text = viewModel.owner.displayName
+        votesLabel.text = viewModel.votes
+        answersLabel.text = viewModel.answers
+        viewsLabel.text = viewModel.views
         answeredImageView.image = viewModel.answered ? checkmarkImage : nil
     }
 }
@@ -255,12 +164,12 @@ final class SearchViewController: UITableViewController {
         return view
     }()
     
-    private let model: ISearchModel
+    private let viewModel: SearchViewModel
     private var resultsCancellable: AnyCancellable?
-    private var tableDataSource: UITableViewDiffableDataSource<Int, SearchResultViewModel>?
+    private var tableDataSource: UITableViewDiffableDataSource<Int, SearchViewModel.Results.Item>?
 
-    init(model: ISearchModel) {
-        self.model = model
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -300,7 +209,7 @@ final class SearchViewController: UITableViewController {
                 guard let self = self else {
                     return
                 }
-                self.model.refresh()
+                self.viewModel.refresh()
             },
             for: .valueChanged
         )
@@ -313,7 +222,7 @@ final class SearchViewController: UITableViewController {
         tableView.autoresizesSubviews = true
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
-        tableView.rowHeight = 80 + 16
+        tableView.rowHeight = 80 + 8
         tableView.backgroundView = backgroundView
         tableView.refreshControl = refreshControl
         tableView.tableHeaderView = {
@@ -323,7 +232,7 @@ final class SearchViewController: UITableViewController {
         }()
         tableView.tableFooterView = UIView()
         
-        tableDataSource = UITableViewDiffableDataSource<Int, SearchResultViewModel>(
+        tableDataSource = UITableViewDiffableDataSource(
             tableView: tableView,
             cellProvider: { tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
@@ -342,14 +251,14 @@ final class SearchViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         // Observe the model and update the UI
-        resultsCancellable = model
+        resultsCancellable = viewModel
             .results
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] results in
+            .sink { [weak self] status in
                 guard let self = self else {
                     return
                 }
-                self.updateSearchResults(results: results)
+                self.updateSearchStatus(status: status)
             }
     }
     
@@ -366,21 +275,23 @@ final class SearchViewController: UITableViewController {
             setBackground(activeView())
         }
         setResults([], animated: true)
-        model.search(query: query)
+        viewModel.search(query: query)
     }
 
-    private func updateSearchResults(results: SearchStatus) {
-        switch results {
-        case .empty:
-            showEmptyViewState()
+    private func updateSearchStatus(status: SearchViewModel.Status?) {
+        switch status {
+        case .none:
+            showPlaceholderViewState()
         case .error(let error):
             showErrorViewState(error)
+        case .noResults(let description):
+            showEmptyViewState(description)
         case .results(let results):
             showResultsViewState(results)
         }
     }
     
-    private func showEmptyViewState() {
+    private func showPlaceholderViewState() {
         setBackground(placeholderView())
         setResults([], animated: true)
     }
@@ -390,20 +301,20 @@ final class SearchViewController: UITableViewController {
         setResults([], animated: true)
     }
     
-    private func showResultsViewState(_ results: SearchResults) {
-        if results.items.count == 0 {
-            setBackground(emptyView(results: results))
-        }
-        else {
-            setBackground(nil)
-        }
+    private func showEmptyViewState(_ description: String) {
+        setBackground(emptyView(description: description))
+        setResults([], animated: true)
+    }
+    
+    private func showResultsViewState(_ results: SearchViewModel.Results) {
+        setBackground(nil)
         setResults(results.items, animated: true)
     }
     
-    private func setResults(_ results: [SearchResultViewModel], animated: Bool) {
+    private func setResults(_ results: [SearchViewModel.Results.Item], animated: Bool) {
         dispatchPrecondition(condition: .onQueue(.main))
         refreshControl?.endRefreshing()
-        var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResultViewModel>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, SearchViewModel.Results.Item>()
         if results.count > 0 {
             snapshot.appendSections([0])
             snapshot.appendItems(results, toSection: 0)
@@ -432,11 +343,11 @@ final class SearchViewController: UITableViewController {
         return view
     }
 
-    private func emptyView(results: SearchResults) -> ContentPlaceholderView {
+    private func emptyView(description: String) -> ContentPlaceholderView {
         let view = ContentPlaceholderView(frame: .zero)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.iconImage = UIImage(systemName: "list.bullet")
-        view.caption = Localization.shared.formattedString(named: "search-empty %@", results.tags.joined(separator: ", "))
+        view.caption = description
         return view
     }
     
@@ -451,10 +362,12 @@ final class SearchViewController: UITableViewController {
     // Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let model = tableDataSource?.itemIdentifier(for: indexPath) else {
+        guard let viewModel = tableDataSource?.itemIdentifier(for: indexPath) else {
             return
         }
-        let viewController = QuestionViewController(model: model)
+        let viewController = QuestionViewController(
+            viewModel: viewModel
+        )
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

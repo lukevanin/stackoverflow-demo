@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+import Mock
+
 
 public struct QuestionsRequest: Codable {
     
@@ -62,8 +64,8 @@ public struct QuestionsResponse: Decodable {
         public let viewCount: Int
         public let answerCount: Int
         public let score: Int
-        public let lastActivityDate: UInt64
-        public let creationDate: UInt64
+        public let lastActivityDate: Timestamp
+        public let creationDate: Timestamp
         public let contentLicense: String?
         public let link: URL
         public let title: String
@@ -76,6 +78,56 @@ public struct QuestionsResponse: Decodable {
 
 public protocol IQuestionsService {
     func getQuestions(_ request: QuestionsRequest) -> AnyPublisher<QuestionsResponse, Error>
+}
+
+
+///
+///
+///
+public final class MockQuestionsService: IQuestionsService {
+    
+    private let mock = Mock()
+    private let response: QuestionsResponse?
+    
+    public init(response: QuestionsResponse? = nil) {
+        self.response = response
+    }
+    
+    public func getQuestions(_ request: QuestionsRequest) -> AnyPublisher<QuestionsResponse, Error> {
+        Just(response ?? makeResponse(for: request))
+            .setFailureType(to: Error.self)
+            .delay(for: 0.25, scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    private func makeResponse(for request: QuestionsRequest) -> QuestionsResponse {
+        return QuestionsResponse(
+            items: (0 ..< 40).map { i in
+                QuestionsResponse.Item(
+                    questionId: i,
+                    tags: request.tagged,
+                    owner: QuestionsResponse.Item.Owner(
+                        userType: "unknown",
+                        displayName: mock.word(),
+                        userId: UInt64(mock.integer(min: 10_000, max: 50_000)),
+                        profileImage: mock.imageURL(width: 50, height: 50),
+                        reputation: mock.integer(min: 0, max: 100_000),
+                        link: nil
+                    ),
+                    isAnswered: mock.boolean(probability: 0.2),
+                    viewCount: mock.integer(min: 0, max: 10_000),
+                    answerCount: mock.integer(min: 0, max: 100),
+                    score: mock.integer(min: 0, max: 5_000),
+                    lastActivityDate: Timestamp(Date()),
+                    creationDate: Timestamp(mock.pastDate(min: 120, max: 86_400 * 1000)),
+                    contentLicense: nil,
+                    link: URL(string: "http://google.com")!,
+                    title: mock.sentence(min: 5, max: 20),
+                    body: mock.article(min: 1, max: 5)
+                )
+            }
+        )
+    }
 }
 
 

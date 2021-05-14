@@ -34,7 +34,7 @@ extension String {
 
 extension Date {
     
-    init(timestamp: UInt64) {
+    init(timestamp: UInt) {
         self.init(timeIntervalSince1970: TimeInterval(timestamp))
     }
 }

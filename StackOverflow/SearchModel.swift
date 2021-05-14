@@ -11,27 +11,6 @@ import Combine
 import StackOverflowAPI
 
 
-struct SearchResultViewModel: Hashable, Identifiable {
-    
-    struct Owner: Hashable {
-        let displayName: String
-        let reputation: Int?
-        let profileImageURL: URL?
-    }
-    
-    let id: String
-    let title: String
-    let owner: Owner
-    let votes: Int
-    let answers: Int
-    let views: Int
-    let answered: Bool
-    let askedDate: Date
-    let content: String
-    let tags: [String]
-}
-
-
 private class AnyState {
     weak var context: SearchModel!
     
@@ -49,7 +28,7 @@ private class AnyState {
 private final class EmptyState: AnyState {
     
     override func enter() {
-        context.internalResults.send(.empty)
+        context.internalResults.send(nil)
     }
     
     override func search(query: String) {
@@ -74,21 +53,20 @@ private final class SearchState: AnyState {
     
     override func enter() {
         dispatchPrecondition(condition: .onQueue(.main))
-        print("Search:", "query:", query)
         let maximumResults = context.configuration.maximumResults
         let tags = [query]
         var request = QuestionsRequest()
         request.tagged = tags
         requestCancellable = context.service
             .getQuestions(request)
-            .map { response -> SearchStatus in
+            .map { response -> SearchModel.Status in
                 let items = response
                     .items
                     .map { item in
-                        SearchResultViewModel(
+                        SearchModel.Results.Item(
                             id: String(item.questionId),
-                            title: item.title.decodeHTMLEntities() ?? item.title,
-                            owner: SearchResultViewModel.Owner(
+                            title: item.title,
+                            owner: SearchModel.Results.Item.Owner(
                                 displayName: item.owner.displayName,
                                 reputation: item.owner.reputation,
                                 profileImageURL: item.owner.profileImage
@@ -97,20 +75,20 @@ private final class SearchState: AnyState {
                             answers: item.answerCount,
                             views: item.viewCount,
                             answered: item.isAnswered,
-                            askedDate: Date(timestamp: item.creationDate),
+                            askedDate: Date(item.creationDate),
                             content: item.body,
                             tags: item.tags
                         )
                     }
                     .prefix(maximumResults)
-                let results = SearchResults(
+                let results = SearchModel.Results(
                     tags: tags,
                     items: Array(items)
                 )
-                return SearchStatus.results(results)
+                return SearchModel.Status.results(results)
             }
             .catch { error in
-                Just(SearchStatus.error(error.localizedDescription))
+                Just(.error(error))
             }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] results in
@@ -140,9 +118,9 @@ private final class SearchState: AnyState {
 private final class OutputState: AnyState {
     
     private let query: String
-    private let results: SearchStatus
+    private let results: SearchModel.Status
     
-    init(query: String, results: SearchStatus) {
+    init(query: String, results: SearchModel.Status) {
         self.query = query
         self.results = results
     }
@@ -166,17 +144,48 @@ private final class OutputState: AnyState {
 }
 
 
-final class SearchModel: ISearchModel {
+final class SearchModel {
+    
+    struct Results {
+        
+        struct Item: Hashable, Identifiable {
+            
+            struct Owner: Hashable {
+                let displayName: String
+                let reputation: Int?
+                let profileImageURL: URL?
+            }
+            
+            let id: String
+            let title: String
+            let owner: Owner
+            let votes: Int
+            let answers: Int
+            let views: Int
+            let answered: Bool
+            let askedDate: Date
+            let content: String
+            let tags: [String]
+        }
+        
+        let tags: [String]
+        let items: [Item]
+    }
+    
+    enum Status {
+        case results(Results)
+        case error(Error)
+    }
     
     struct Configuration {
         var maximumResults: Int
     }
     
-    var results: AnyPublisher<SearchStatus, Never>  {
+    var results: AnyPublisher<Status?, Never>  {
         internalResults.eraseToAnyPublisher()
     }
     
-    fileprivate let internalResults: CurrentValueSubject<SearchStatus, Never>
+    fileprivate let internalResults = CurrentValueSubject<Status?, Never>(nil)
     fileprivate let configuration: Configuration
     fileprivate let service: IQuestionsService
     
@@ -185,7 +194,6 @@ final class SearchModel: ISearchModel {
     init(configuration: Configuration, service: IQuestionsService) {
         self.configuration = configuration
         self.service = service
-        self.internalResults = CurrentValueSubject(.empty)
         setState(EmptyState())
     }
     

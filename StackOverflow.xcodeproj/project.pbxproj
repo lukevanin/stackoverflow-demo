@@ -28,10 +28,24 @@
 		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
 		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
 		FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* ImageLoader.swift */; };
-		FC8967BD264DA2B300F72FDD /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */; };
 		FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */; };
 		FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C0264DBECD00F72FDD /* NavigationController.swift */; };
 		FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */; };
+		FCCDF60D264E798200FC01A3 /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = FCCDF60B264E798200FC01A3 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCCDF610264E798200FC01A3 /* Layout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF609264E798200FC01A3 /* Layout.framework */; };
+		FCCDF611264E798200FC01A3 /* Layout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF609264E798200FC01A3 /* Layout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCCDF616264E79AA00FC01A3 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF615264E79AA00FC01A3 /* Margin.swift */; };
+		FCCDF619264E7D4100FC01A3 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */; };
+		FCCDF627264E95C400FC01A3 /* Mock.h in Headers */ = {isa = PBXBuildFile; fileRef = FCCDF625264E95C400FC01A3 /* Mock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCCDF62A264E95C400FC01A3 /* Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF623264E95C400FC01A3 /* Mock.framework */; };
+		FCCDF62B264E95C400FC01A3 /* Mock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF623264E95C400FC01A3 /* Mock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCCDF62F264E95CB00FC01A3 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF61A264E83A800FC01A3 /* Mock.swift */; };
+		FCCDF631264E961300FC01A3 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF630264E961300FC01A3 /* Timestamp.swift */; };
+		FCCDF638264E975500FC01A3 /* Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF623264E95C400FC01A3 /* Mock.framework */; };
+		FCCDF639264E975500FC01A3 /* Mock.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF623264E95C400FC01A3 /* Mock.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCCDF63E264E99FD00FC01A3 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF63D264E99FD00FC01A3 /* ColorView.swift */; };
+		FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */; };
+		FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +56,27 @@
 			remoteGlobalIDString = FC44AAAA264C7EEF004B32A4;
 			remoteInfo = StackOverflowAPI;
 		};
+		FCCDF60E264E798200FC01A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC44AA6D264C1EE7004B32A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCDF608264E798200FC01A3;
+			remoteInfo = Layout;
+		};
+		FCCDF628264E95C400FC01A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC44AA6D264C1EE7004B32A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCDF622264E95C400FC01A3;
+			remoteInfo = Mock;
+		};
+		FCCDF635264E974C00FC01A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC44AA6D264C1EE7004B32A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCDF622264E95C400FC01A3;
+			remoteInfo = Mock;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +86,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FCCDF611264E798200FC01A3 /* Layout.framework in Embed Frameworks */,
+				FCCDF62B264E95C400FC01A3 /* Mock.framework in Embed Frameworks */,
 				FC44AAB3264C7EEF004B32A4 /* StackOverflowAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF63A264E975500FC01A3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FCCDF639264E975500FC01A3 /* Mock.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +134,18 @@
 		FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainerView.swift; sourceTree = "<group>"; };
 		FC8967C0264DBECD00F72FDD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainerView.swift; sourceTree = "<group>"; };
+		FCCDF609264E798200FC01A3 /* Layout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Layout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCCDF60B264E798200FC01A3 /* Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		FCCDF60C264E798200FC01A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCDF615264E79AA00FC01A3 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
+		FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		FCCDF61A264E83A800FC01A3 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		FCCDF623264E95C400FC01A3 /* Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCCDF625264E95C400FC01A3 /* Mock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mock.h; sourceTree = "<group>"; };
+		FCCDF626264E95C400FC01A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCDF630264E961300FC01A3 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		FCCDF63D264E99FD00FC01A3 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +153,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCDF610264E798200FC01A3 /* Layout.framework in Frameworks */,
+				FCCDF62A264E95C400FC01A3 /* Mock.framework in Frameworks */,
 				FC44AAB2264C7EEF004B32A4 /* StackOverflowAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FC44AAA8264C7EEF004B32A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCDF638264E975500FC01A3 /* Mock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF606264E798200FC01A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF620264E95C400FC01A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +192,10 @@
 				FC44AA93264C1F86004B32A4 /* sample.json */,
 				FC44AA77264C1EE7004B32A4 /* StackOverflow */,
 				FC44AAAC264C7EEF004B32A4 /* StackOverflowAPI */,
+				FCCDF60A264E798200FC01A3 /* Layout */,
+				FCCDF624264E95C400FC01A3 /* Mock */,
 				FC44AA76264C1EE7004B32A4 /* Products */,
+				FCCDF632264E974C00FC01A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +204,8 @@
 			children = (
 				FC44AA75264C1EE7004B32A4 /* StackOverflow.app */,
 				FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */,
+				FCCDF609264E798200FC01A3 /* Layout.framework */,
+				FCCDF623264E95C400FC01A3 /* Mock.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,10 +216,10 @@
 				FCAAA40D264E6BCE00C735E1 /* Delegate */,
 				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
 				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
+				FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */,
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
 				FC8967BA264D99BB00F72FDD /* ImageLoader.swift */,
-				FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */,
 				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
 				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
 				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
@@ -153,6 +235,7 @@
 			children = (
 				FC44AAAD264C7EEF004B32A4 /* StackOverflowAPI.h */,
 				FC44AAA2264C7646004B32A4 /* StackOverflowQuestionsService.swift */,
+				FCCDF630264E961300FC01A3 /* Timestamp.swift */,
 				FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */,
 				FC44AAAE264C7EEF004B32A4 /* Info.plist */,
 			);
@@ -180,6 +263,36 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		FCCDF60A264E798200FC01A3 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDF60B264E798200FC01A3 /* Layout.h */,
+				FCCDF615264E79AA00FC01A3 /* Margin.swift */,
+				FCCDF63D264E99FD00FC01A3 /* ColorView.swift */,
+				FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */,
+				FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */,
+				FCCDF60C264E798200FC01A3 /* Info.plist */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		FCCDF624264E95C400FC01A3 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDF625264E95C400FC01A3 /* Mock.h */,
+				FCCDF61A264E83A800FC01A3 /* Mock.swift */,
+				FCCDF626264E95C400FC01A3 /* Info.plist */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		FCCDF632264E974C00FC01A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -188,6 +301,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC44AAAF264C7EEF004B32A4 /* StackOverflowAPI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF604264E798200FC01A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCDF60D264E798200FC01A3 /* Layout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF61E264E95C400FC01A3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCDF627264E95C400FC01A3 /* Mock.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +336,8 @@
 			);
 			dependencies = (
 				FC44AAB1264C7EEF004B32A4 /* PBXTargetDependency */,
+				FCCDF60F264E798200FC01A3 /* PBXTargetDependency */,
+				FCCDF629264E95C400FC01A3 /* PBXTargetDependency */,
 			);
 			name = StackOverflow;
 			productName = StackOverflow;
@@ -221,14 +352,52 @@
 				FC44AAA7264C7EEF004B32A4 /* Sources */,
 				FC44AAA8264C7EEF004B32A4 /* Frameworks */,
 				FC44AAA9264C7EEF004B32A4 /* Resources */,
+				FCCDF63A264E975500FC01A3 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCCDF636264E974C00FC01A3 /* PBXTargetDependency */,
+			);
+			name = StackOverflowAPI;
+			productName = StackOverflowAPI;
+			productReference = FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FCCDF608264E798200FC01A3 /* Layout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCCDF612264E798200FC01A3 /* Build configuration list for PBXNativeTarget "Layout" */;
+			buildPhases = (
+				FCCDF604264E798200FC01A3 /* Headers */,
+				FCCDF605264E798200FC01A3 /* Sources */,
+				FCCDF606264E798200FC01A3 /* Frameworks */,
+				FCCDF607264E798200FC01A3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = StackOverflowAPI;
-			productName = StackOverflowAPI;
-			productReference = FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */;
+			name = Layout;
+			productName = Layout;
+			productReference = FCCDF609264E798200FC01A3 /* Layout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FCCDF622264E95C400FC01A3 /* Mock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCCDF62C264E95C400FC01A3 /* Build configuration list for PBXNativeTarget "Mock" */;
+			buildPhases = (
+				FCCDF61E264E95C400FC01A3 /* Headers */,
+				FCCDF61F264E95C400FC01A3 /* Sources */,
+				FCCDF620264E95C400FC01A3 /* Frameworks */,
+				FCCDF621264E95C400FC01A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mock;
+			productName = Mock;
+			productReference = FCCDF623264E95C400FC01A3 /* Mock.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -244,6 +413,13 @@
 						CreatedOnToolsVersion = 12.5;
 					};
 					FC44AAAA264C7EEF004B32A4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					FCCDF608264E798200FC01A3 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					FCCDF622264E95C400FC01A3 = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -263,6 +439,8 @@
 			targets = (
 				FC44AA74264C1EE7004B32A4 /* StackOverflow */,
 				FC44AAAA264C7EEF004B32A4 /* StackOverflowAPI */,
+				FCCDF608264E798200FC01A3 /* Layout */,
+				FCCDF622264E95C400FC01A3 /* Mock */,
 			);
 		};
 /* End PBXProject section */
@@ -289,6 +467,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCCDF607264E798200FC01A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF621264E95C400FC01A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -301,13 +493,13 @@
 				FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
+				FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */,
 				FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */,
 				FC8967B9264D133C00F72FDD /* Localization.swift in Sources */,
 				FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */,
 				FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */,
 				FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */,
 				FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */,
-				FC8967BD264DA2B300F72FDD /* HorizontalDividerView.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,7 +509,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC44AAB9264C7F05004B32A4 /* CodableTransport.swift in Sources */,
+				FCCDF631264E961300FC01A3 /* Timestamp.swift in Sources */,
 				FC44AAB8264C7EF8004B32A4 /* StackOverflowQuestionsService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF605264E798200FC01A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCDF63E264E99FD00FC01A3 /* ColorView.swift in Sources */,
+				FCCDF619264E7D4100FC01A3 /* UIKitExtensions.swift in Sources */,
+				FCCDF616264E79AA00FC01A3 /* Margin.swift in Sources */,
+				FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDF61F264E95C400FC01A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCDF62F264E95CB00FC01A3 /* Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +540,21 @@
 			isa = PBXTargetDependency;
 			target = FC44AAAA264C7EEF004B32A4 /* StackOverflowAPI */;
 			targetProxy = FC44AAB0264C7EEF004B32A4 /* PBXContainerItemProxy */;
+		};
+		FCCDF60F264E798200FC01A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCCDF608264E798200FC01A3 /* Layout */;
+			targetProxy = FCCDF60E264E798200FC01A3 /* PBXContainerItemProxy */;
+		};
+		FCCDF629264E95C400FC01A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCCDF622264E95C400FC01A3 /* Mock */;
+			targetProxy = FCCDF628264E95C400FC01A3 /* PBXContainerItemProxy */;
+		};
+		FCCDF636264E974C00FC01A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCCDF622264E95C400FC01A3 /* Mock */;
+			targetProxy = FCCDF635264E974C00FC01A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,7 +694,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DBK476475Y;
-				INFOPLIST_FILE = StackOverflow/Info.plist;
+				INFOPLIST_FILE = StackOverflow/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -488,7 +715,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DBK476475Y;
-				INFOPLIST_FILE = StackOverflow/Info.plist;
+				INFOPLIST_FILE = StackOverflow/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -557,6 +784,121 @@
 			};
 			name = Release;
 		};
+		FCCDF613264E798200FC01A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DBK476475Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Layout/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukevanin.Layout;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FCCDF614264E798200FC01A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DBK476475Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Layout/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukevanin.Layout;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FCCDF62D264E95C400FC01A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DBK476475Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Mock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukevanin.Mock;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FCCDF62E264E95C400FC01A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DBK476475Y;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Mock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukevanin.Mock;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -583,6 +925,24 @@
 			buildConfigurations = (
 				FC44AAB5264C7EEF004B32A4 /* Debug */,
 				FC44AAB6264C7EEF004B32A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCCDF612264E798200FC01A3 /* Build configuration list for PBXNativeTarget "Layout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCCDF613264E798200FC01A3 /* Debug */,
+				FCCDF614264E798200FC01A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCCDF62C264E95C400FC01A3 /* Build configuration list for PBXNativeTarget "Mock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCCDF62D264E95C400FC01A3 /* Debug */,
+				FCCDF62E264E95C400FC01A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

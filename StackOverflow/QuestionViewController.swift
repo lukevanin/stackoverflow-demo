@@ -6,7 +6,9 @@
 //
 
 import UIKit
-import WebKit
+import Combine
+
+import Layout
 
 final class QuestionViewController: UIViewController {
     
@@ -87,10 +89,11 @@ final class QuestionViewController: UIViewController {
         return view
     }()
 
-    private let model: SearchResultViewModel
+    private let viewModel: SearchViewModel.Results.Item
+    private var cancellables = Set<AnyCancellable>()
     
-    init(model: SearchResultViewModel) {
-        self.model = model
+    init(viewModel: SearchViewModel.Results.Item) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -171,6 +174,9 @@ final class QuestionViewController: UIViewController {
                     tagsContainer,
                     HorizontalDividerView(),
                     authorContainer,
+//                    authorLayout.layout.margin(
+//                        insets: UIEdgeInsets(horizontal: 16, vertical: 8)
+//                    )
                 ]
             )
             layout.translatesAutoresizingMaskIntoConstraints = false
@@ -221,7 +227,7 @@ final class QuestionViewController: UIViewController {
             
             // Author
             authorLayout.heightAnchor.constraint(
-                equalToConstant: 65 - (authorContainer.layoutMargins.top + authorContainer.layoutMargins.bottom)
+                equalToConstant: 65 - 16
             ),
             authorLayout.leftAnchor.constraint(
                 equalTo: authorContainer.layoutMarginsGuide.leftAnchor
@@ -270,18 +276,17 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateHeader() {
-        headerLabel.text = model.title
+        headerLabel.text = viewModel.title
     }
     
     private func updateAuthor() {
-        authorNameLabel.text = model.owner.displayName
+        authorNameLabel.text = viewModel.owner.displayName
     }
     
     private func updateReputation() {
-        let localization = Localization.shared
-        if let reputation = model.owner.reputation {
+        if let reputation = viewModel.owner.reputation {
             authorReputationLabel.isHidden = false
-            authorReputationLabel.text = localization.formatInteger(reputation)
+            authorReputationLabel.text = reputation
         }
         else {
             authorReputationLabel.isHidden = true
@@ -289,50 +294,23 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateDate() {
-        let localization = Localization.shared
-        askedDateLabel.text = localization.formattedString(named: "asked-on %@ at %@", localization.formatDate(model.askedDate), localization.formatTime(model.askedDate))
+        askedDateLabel.text = viewModel.askedDate
     }
     
     private func updateTags() {
-        tagsLabel.text = model.tags.joined(separator: ", ")
+        tagsLabel.text = viewModel.tags
     }
     
     private func updateBody() {
-        let content = model.content
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            let data = content.data(using: .utf8)
-            let content: NSAttributedString = data.flatMap { data -> NSAttributedString? in
-                let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding: String.Encoding.utf8.rawValue
-                ]
-                return try? NSAttributedString(
-                    data: data,
-                    options: options,
-                    documentAttributes: nil
-                )
-            } ?? NSAttributedString(string: content)
-            let formattedContent: NSAttributedString = {
-                let attributes: [NSAttributedString.Key: Any] = [
-                    .font: UIFont.systemFont(ofSize: 13, weight: .regular),
-                    .foregroundColor: UIColor(named: "PrimaryTextColor") as Any,
-                ]
-                let range = NSRange(location: 0, length: content.length)
-                let output = NSMutableAttributedString(attributedString: content)
-                output.setAttributes(attributes, range: range)
-                return output
-            }()
-            DispatchQueue.main.async { [weak self] in
-                guard let self = self else {
-                    return
-                }
-                self.contentTextView.attributedText = formattedContent
-            }
-        }
+        viewModel
+            .formattedBody()
+            .receive(on: DispatchQueue.main)
+            .assign(to: \.attributedText, on: contentTextView)
+            .store(in: &cancellables)
     }
     
     private func updateProfileImage() {
-        if let url = model.owner.profileImageURL {
+        if let url = viewModel.owner.profileImageURL {
             authorProfileImageView.isHidden = false
             authorProfileImageView.url = url
         }

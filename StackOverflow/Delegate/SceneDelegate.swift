@@ -33,17 +33,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let urlSession = URLSession.shared
         
+        #warning("TODO: Replace mock with real service")
+        
         let model = SearchModel(
             configuration: SearchModel.Configuration(
                 maximumResults: 20
             ),
-            service: QuestionsService(
-                baseURL: baseURL,
-                session: urlSession
-            )
+//            service: QuestionsService(
+//                baseURL: baseURL,
+//                session: urlSession
+//            )
+            service: MockQuestionsService()
+        )
+        let viewModel = SearchViewModel(
+            model: model
         )
         let viewController = SearchViewController(
-            model: model
+            viewModel: viewModel
         )
         return viewController
     }
