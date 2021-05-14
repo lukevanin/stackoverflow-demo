@@ -23,7 +23,7 @@ final class SearchResultTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = UIColor(named: "ThemeColor")
+        label.textColor = UIColor(named: "ThemeAccentColor")
         label.numberOfLines = 2
         return label
     }()
@@ -68,7 +68,7 @@ final class SearchResultTableViewCell: UITableViewCell {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
-        view.tintColor = .systemGreen
+        view.tintColor = UIColor(named: "SelectionColor")
         return view
     }()
 
@@ -91,7 +91,7 @@ final class SearchResultTableViewCell: UITableViewCell {
         .margin(
             insets: UIEdgeInsets(
                 horizontal: 0,
-                vertical: 4
+                vertical: 8
             )
         )
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
@@ -127,7 +127,7 @@ final class SearchResultTableViewCell: UITableViewCell {
         .margin(
             insets: UIEdgeInsets(
                 horizontal: 16,
-                vertical: 12
+                vertical: 16
             )
         )
         .add(to: contentView)
@@ -222,7 +222,7 @@ final class SearchViewController: UITableViewController {
         tableView.autoresizesSubviews = true
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
-        tableView.rowHeight = 80 + 8
+        tableView.rowHeight = 80 + 16
         tableView.backgroundView = backgroundView
         tableView.refreshControl = refreshControl
         tableView.tableHeaderView = {
@@ -331,7 +331,7 @@ final class SearchViewController: UITableViewController {
         let view = ContentPlaceholderView(frame: .zero)
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.caption = NSLocalizedString("search-placeholder", comment: "")
-        view.iconImage = UIImage(systemName: "magnifyingglass")
+        view.iconImage = UIImage(systemName: "text.magnifyingglass")
         return view
     }
     
