@@ -280,7 +280,7 @@ final class SearchViewController: UITableViewController {
         let searchTextField = searchBar.searchTextField
         searchTextField.backgroundColor = UIColor(named: "PrimaryBackgroundColor")
         searchTextField.leftView?.tintColor = UIColor(named: "PrimaryTextColor")?.withAlphaComponent(0.5)
-        searchTextField.tintColor = UIColor(named: "ThemeColor")
+        searchTextField.tintColor = UIColor(named: "PrimaryTextColor")
         searchTextField.textColor = UIColor(named: "PrimaryTextColor")
 
         // Place the search bar in the navigation bar.
@@ -340,7 +340,6 @@ final class SearchViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         
         // Observe the model and update the UI
         resultsCancellable = model
@@ -415,8 +414,6 @@ final class SearchViewController: UITableViewController {
     private func setBackground(_ view: UIView?) {
         dispatchPrecondition(condition: .onQueue(.main))
         backgroundView.contentView = view
-//        backgroundView?.frame = tableView.bounds
-//        tableView.backgroundView = backgroundView
     }
 
     private func placeholderView() -> ContentPlaceholderView {

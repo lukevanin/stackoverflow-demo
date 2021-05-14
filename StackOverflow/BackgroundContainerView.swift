@@ -22,6 +22,7 @@ class BackgroundContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layoutMargins = .zero
         let notificationCenter = NotificationCenter.default
         notificationCenter.publisher(
             for: UIResponder.keyboardWillChangeFrameNotification

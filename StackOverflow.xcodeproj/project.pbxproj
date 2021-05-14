@@ -131,8 +131,7 @@
 		FC44AA77264C1EE7004B32A4 /* StackOverflow */ = {
 			isa = PBXGroup;
 			children = (
-				FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */,
-				FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */,
+				FCAAA40D264E6BCE00C735E1 /* Delegate */,
 				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
 				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
@@ -144,11 +143,7 @@
 				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
 				FC8967B8264D133C00F72FDD /* Localization.swift */,
 				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
-				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
-				FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */,
-				FC44AA81264C1EE9004B32A4 /* Assets.xcassets */,
-				FC44AA83264C1EE9004B32A4 /* LaunchScreen.storyboard */,
-				FC44AA86264C1EE9004B32A4 /* Info.plist */,
+				FCAAA40C264E6BC500C735E1 /* Resources */,
 			);
 			path = StackOverflow;
 			sourceTree = "<group>";
@@ -162,6 +157,27 @@
 				FC44AAAE264C7EEF004B32A4 /* Info.plist */,
 			);
 			path = StackOverflowAPI;
+			sourceTree = "<group>";
+		};
+		FCAAA40C264E6BC500C735E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC44AA9F264C5DE9004B32A4 /* Localizable.strings */,
+				FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */,
+				FC44AA81264C1EE9004B32A4 /* Assets.xcassets */,
+				FC44AA83264C1EE9004B32A4 /* LaunchScreen.storyboard */,
+				FC44AA86264C1EE9004B32A4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCAAA40D264E6BCE00C735E1 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */,
+				FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
