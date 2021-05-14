@@ -122,7 +122,7 @@ public final class MockQuestionsService: IQuestionsService {
                     creationDate: Timestamp(mock.pastDate(min: 120, max: 86_400 * 1000)),
                     contentLicense: nil,
                     link: URL(string: "http://google.com")!,
-                    title: mock.sentence(min: 5, max: 20),
+                    title: mock.sentence(min: 5, max: 15),
                     body: mock.article(min: 1, max: 5)
                 )
             }

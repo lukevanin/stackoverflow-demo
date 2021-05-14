@@ -27,7 +27,7 @@
 		FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */; };
 		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
 		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
-		FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* ImageLoader.swift */; };
+		FC8967BB264D99BB00F72FDD /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* URLImageView.swift */; };
 		FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */; };
 		FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C0264DBECD00F72FDD /* NavigationController.swift */; };
 		FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */; };
@@ -46,6 +46,7 @@
 		FCCDF63E264E99FD00FC01A3 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF63D264E99FD00FC01A3 /* ColorView.swift */; };
 		FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */; };
 		FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */; };
+		FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +130,7 @@
 		FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExtensions.swift; sourceTree = "<group>"; };
 		FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FC8967B8264D133C00F72FDD /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
-		FC8967BA264D99BB00F72FDD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		FC8967BA264D99BB00F72FDD /* URLImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
 		FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalDividerView.swift; sourceTree = "<group>"; };
 		FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarContainerView.swift; sourceTree = "<group>"; };
 		FC8967C0264DBECD00F72FDD /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		FCCDF630264E961300FC01A3 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		FCCDF63D264E99FD00FC01A3 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,17 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				FCAAA40D264E6BCE00C735E1 /* Delegate */,
-				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
-				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
-				FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */,
-				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
-				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
-				FC8967BA264D99BB00F72FDD /* ImageLoader.swift */,
-				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
-				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
-				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
-				FC8967B8264D133C00F72FDD /* Localization.swift */,
-				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
+				FCCDF64A264F10D700FC01A3 /* Model */,
+				FCCDF648264F109C00FC01A3 /* View Controllers */,
+				FCCDF649264F10AA00FC01A3 /* Views */,
+				FCCDF64B264F10EA00FC01A3 /* Utilities */,
 				FCAAA40C264E6BC500C735E1 /* Resources */,
 			);
 			path = StackOverflow;
@@ -291,6 +286,46 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCCDF648264F109C00FC01A3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
+				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FCCDF649264F10AA00FC01A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */,
+				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
+				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
+				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
+				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
+				FC8967BA264D99BB00F72FDD /* URLImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FCCDF64A264F10D700FC01A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */,
+				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCCDF64B264F10EA00FC01A3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC8967B8264D133C00F72FDD /* Localization.swift */,
+				FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,9 +523,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */,
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
 				FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */,
-				FC8967BB264D99BB00F72FDD /* ImageLoader.swift in Sources */,
+				FC8967BB264D99BB00F72FDD /* URLImageView.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
 				FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */,

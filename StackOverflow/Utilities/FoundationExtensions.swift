@@ -30,11 +30,3 @@ extension String {
         return attributedString.string
     }
 }
-
-
-extension Date {
-    
-    init(timestamp: UInt) {
-        self.init(timeIntervalSince1970: TimeInterval(timestamp))
-    }
-}

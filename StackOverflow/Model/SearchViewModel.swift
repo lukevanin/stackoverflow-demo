@@ -14,7 +14,8 @@ extension SearchViewModel.Status {
         let localization = Localization.shared
         switch status {
         case .error(let error):
-            self = .error(error.localizedDescription)
+            let description = localization.formattedString(named: "search-error %@", error.localizedDescription)
+            self = .error(description)
             
         case .results(let results):
             if results.items.count > 0 {

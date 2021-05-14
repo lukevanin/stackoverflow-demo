@@ -39,11 +39,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             configuration: SearchModel.Configuration(
                 maximumResults: 20
             ),
-//            service: QuestionsService(
-//                baseURL: baseURL,
-//                session: urlSession
-//            )
-            service: MockQuestionsService()
+            service: QuestionsService(
+                baseURL: baseURL,
+                session: urlSession
+            )
+//            service: MockQuestionsService()
         )
         let viewModel = SearchViewModel(
             model: model

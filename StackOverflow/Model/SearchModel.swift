@@ -56,6 +56,7 @@ private final class SearchState: AnyState {
         let maximumResults = context.configuration.maximumResults
         let tags = [query]
         var request = QuestionsRequest()
+        request.pageSize = maximumResults
         request.tagged = tags
         requestCancellable = context.service
             .getQuestions(request)

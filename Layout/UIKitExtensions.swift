@@ -10,6 +10,15 @@ import UIKit
 
 extension UIEdgeInsets {
     
+    public init(all margin: CGFloat) {
+        self.init(
+            top: margin,
+            left: margin,
+            bottom: margin,
+            right: margin
+        )
+    }
+
     public init(horizontal: CGFloat, vertical: CGFloat) {
         self.init(
             top: vertical,
