@@ -121,8 +121,12 @@ final class QuestionViewController: UIViewController {
                     .color(UIColor(named: "SecondaryBackgroundColor")!),
                 HorizontalDividerView(),
                 // Content
-                contentActivityView,
-                contentTextView,
+                ZStack(
+                    contents: [
+                        contentTextView,
+                        contentActivityView,
+                    ]
+                ),
                 HorizontalDividerView(),
                 // Tags
                 tagsLabel
@@ -200,8 +204,18 @@ final class QuestionViewController: UIViewController {
                 guard let self = self else {
                     return
                 }
-                self.contentTextView.attributedText = value
                 self.contentActivityView.stopAnimating()
+                UIView.transition(
+                    with: self.view,
+                    duration: 0.25,
+                    options: [.transitionCrossDissolve],
+                    animations: {
+                        self.contentTextView.attributedText = value
+                    },
+                    completion: { _ in
+                        self.contentActivityView.removeFromSuperview()
+                    }
+                )
             }
             .store(in: &cancellables)
     }

@@ -29,19 +29,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func makeViewController() -> UIViewController {
-        let baseURL = URL(string: "https://api.stackexchange.com/2.2/")!
-        
-        let urlSession = URLSession.shared
-        
-        #warning("TODO: Replace mock with real service")
-        
         let model = SearchModel(
             configuration: SearchModel.Configuration(
                 maximumResults: 20
             ),
             service: QuestionsService(
-                baseURL: baseURL,
-                session: urlSession
+                baseURL: URL(string: "https://api.stackexchange.com/2.2/")!,
+                session: .shared
             )
 //            service: MockQuestionsService()
         )

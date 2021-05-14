@@ -47,6 +47,7 @@
 		FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */; };
 		FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */; };
 		FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */; };
+		FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64C264F188100FC01A3 /* ZStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		FCCDF63D264E99FD00FC01A3 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		FCCDF64C264F188100FC01A3 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +267,7 @@
 				FCCDF615264E79AA00FC01A3 /* Margin.swift */,
 				FCCDF63D264E99FD00FC01A3 /* ColorView.swift */,
 				FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */,
+				FCCDF64C264F188100FC01A3 /* ZStack.swift */,
 				FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */,
 				FCCDF60C264E798200FC01A3 /* Info.plist */,
 			);
@@ -557,6 +560,7 @@
 				FCCDF63E264E99FD00FC01A3 /* ColorView.swift in Sources */,
 				FCCDF619264E7D4100FC01A3 /* UIKitExtensions.swift in Sources */,
 				FCCDF616264E79AA00FC01A3 /* Margin.swift in Sources */,
+				FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */,
 				FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

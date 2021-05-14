@@ -2,6 +2,8 @@
 
 Demo application using the StackOverflow API:
 
+## Requirements
+
 Using Swift 3.2 or higher, create an iPhone application that allows a user to search StackOverflow for questions via their tags.
 Requirements
 
@@ -17,9 +19,7 @@ Requirements
 _Note: The ‘filter=withbody’ parameter is required in order to return the question body. This is not mentioned in the methods documentation.)_
 
 
-## Search Questions
-
-Requirements:
+**Search Questions**
 
 1. On app launch the user should be presented with the screen SCR01.
 2. The search should be performed after the user enters a keyword and taps the ‘Search’ button.
@@ -32,9 +32,7 @@ Requirements:
     4. If the question is answered, the checkmark should be shown (check.png)
 6. Selecting a result will load the SCR03 screen
 
-## View Question
-
-Requirements:
+**View Question**
 
 1. The title of the question should be displayed in a fixed-height grey view and fixed to the top of the screen.
 2. The HTML body of the question should scrollable.
@@ -43,7 +41,6 @@ Requirements:
     2. The owners profile image
     3. The owners reputation
     4. The date the question was posted
-4. The tags should be displayed in a fixed-height view above the owners details and below the
-questions body.
+4. The tags should be displayed in a fixed-height view above the owners details and below the questions body.
 
 
