@@ -82,7 +82,6 @@ final class ContentPlaceholderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(named: "SecondaryBackgroundColor")
         let layout: UIStackView = {
             let layout = UIStackView(
                 arrangedSubviews: [

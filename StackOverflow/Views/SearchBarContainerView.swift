@@ -11,6 +11,8 @@ import UIKit
 /// See: https://stackoverflow.com/a/46618780/762377
 class SearchBarContainerView: UIView {
 
+    var minimumHeight: CGFloat = 32
+    var maximumHeight: CGFloat = 44
     let searchBar: UISearchBar
 
     init(customSearchBar: UISearchBar) {
@@ -25,11 +27,12 @@ class SearchBarContainerView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        let height = max(min(bounds.height, maximumHeight), minimumHeight)
         searchBar.frame = CGRect(
             x: 0,
             y: 0,
             width: bounds.width,
-            height: bounds.height - 8
+            height: height
         )
     }
 }

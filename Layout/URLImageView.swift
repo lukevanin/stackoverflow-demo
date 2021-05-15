@@ -9,9 +9,9 @@ import UIKit
 import Combine
 
 
-final class URLImageView: UIView {
+public final class URLImageView: UIView {
     
-    var url: URL? {
+    public var url: URL? {
         didSet {
             guard url != oldValue else {
                 return
@@ -20,7 +20,7 @@ final class URLImageView: UIView {
         }
     }
     
-    override var contentMode: UIView.ContentMode {
+    override public var contentMode: UIView.ContentMode {
         get {
             imageView.contentMode
         }
@@ -39,7 +39,7 @@ final class URLImageView: UIView {
     
     private let session: URLSession
     
-    init(session: URLSession = .shared) {
+    public init(session: URLSession = .shared) {
         self.session = session
         super.init(frame: .zero)
         imageView.frame = bounds

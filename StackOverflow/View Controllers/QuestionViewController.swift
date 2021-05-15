@@ -219,6 +219,9 @@ final class QuestionViewController: UIViewController {
                 img {
                     max-width: 100%;
                 }
+                a {
+                    color: #\(UIColor(named: "ThemeAccentColor")!.hex())
+                }
             </style>
             </head>
             <body>

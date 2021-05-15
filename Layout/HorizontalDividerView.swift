@@ -20,7 +20,7 @@ public final class HorizontalDividerView: UIView {
     
     private var heightConstraint: NSLayoutConstraint!
 
-    public init(height: CGFloat = 1) {
+    public init(height: CGFloat = 1, color: UIColor? = UIColor(named: "DividerColor")) {
         self.height = height
         super.init(frame: .zero)
         heightConstraint = heightAnchor.constraint(
@@ -28,7 +28,7 @@ public final class HorizontalDividerView: UIView {
         )
         heightConstraint.isActive = true
         isOpaque = true
-        backgroundColor = UIColor(named: "DividerColor")
+        backgroundColor = color
         translatesAutoresizingMaskIntoConstraints = false
         invalidateHeight()
     }

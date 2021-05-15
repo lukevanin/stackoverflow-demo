@@ -22,6 +22,7 @@ class BackgroundContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = UIColor(named: "SecondaryBackgroundColor")
         layoutMargins = .zero
         let notificationCenter = NotificationCenter.default
         notificationCenter.publisher(
@@ -56,7 +57,12 @@ class BackgroundContainerView: UIView {
         let animationCurveValue = info[UIResponder.keyboardAnimationCurveUserInfoKey] as? Int
         let animationCurve = UIView.AnimationCurve(rawValue: animationCurveValue ?? 0) ?? .linear
 
-        self.layoutMargins.bottom = localOverlap.height
+        self.layoutMargins = UIEdgeInsets(
+            top: 0,
+            left: 0,
+            bottom: localOverlap.height,
+            right: 0
+        )
         let animator = UIViewPropertyAnimator(
             duration: animationDuration ?? 0,
             curve: animationCurve,

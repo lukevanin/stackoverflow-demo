@@ -21,20 +21,19 @@
 		FC44AAAF264C7EEF004B32A4 /* StackOverflowAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = FC44AAAD264C7EEF004B32A4 /* StackOverflowAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC44AAB2264C7EEF004B32A4 /* StackOverflowAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */; };
 		FC44AAB3264C7EEF004B32A4 /* StackOverflowAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FC44AAB8264C7EF8004B32A4 /* StackOverflowQuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA2264C7646004B32A4 /* StackOverflowQuestionsService.swift */; };
+		FC44AAB8264C7EF8004B32A4 /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA2264C7646004B32A4 /* QuestionsService.swift */; };
 		FC44AAB9264C7F05004B32A4 /* CodableTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */; };
 		FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */; };
 		FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AABC264C93BA004B32A4 /* FoundationExtensions.swift */; };
 		FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */; };
 		FC8967B9264D133C00F72FDD /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967B8264D133C00F72FDD /* Localization.swift */; };
-		FC8967BB264D99BB00F72FDD /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* URLImageView.swift */; };
 		FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */; };
 		FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C0264DBECD00F72FDD /* NavigationController.swift */; };
 		FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */; };
 		FCCDF60D264E798200FC01A3 /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = FCCDF60B264E798200FC01A3 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCCDF610264E798200FC01A3 /* Layout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF609264E798200FC01A3 /* Layout.framework */; };
 		FCCDF611264E798200FC01A3 /* Layout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF609264E798200FC01A3 /* Layout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FCCDF616264E79AA00FC01A3 /* Margin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF615264E79AA00FC01A3 /* Margin.swift */; };
+		FCCDF616264E79AA00FC01A3 /* MarginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF615264E79AA00FC01A3 /* MarginView.swift */; };
 		FCCDF619264E7D4100FC01A3 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */; };
 		FCCDF627264E95C400FC01A3 /* Mock.h in Headers */ = {isa = PBXBuildFile; fileRef = FCCDF625264E95C400FC01A3 /* Mock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCCDF62A264E95C400FC01A3 /* Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCDF623264E95C400FC01A3 /* Mock.framework */; };
@@ -49,6 +48,7 @@
 		FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */; };
 		FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64C264F188100FC01A3 /* ZStack.swift */; };
 		FCCDF64F264F206800FC01A3 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */; };
+		FCCDF651264FD6AF00FC01A3 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* URLImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +123,7 @@
 		FC44AA9A264C2D24004B32A4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		FC44AA9F264C5DE9004B32A4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		FC44AAA2264C7646004B32A4 /* StackOverflowQuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowQuestionsService.swift; sourceTree = "<group>"; };
+		FC44AAA2264C7646004B32A4 /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
 		FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTransport.swift; sourceTree = "<group>"; };
 		FC44AAAB264C7EEF004B32A4 /* StackOverflowAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StackOverflowAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC44AAAD264C7EEF004B32A4 /* StackOverflowAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackOverflowAPI.h; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		FCCDF609264E798200FC01A3 /* Layout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Layout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCDF60B264E798200FC01A3 /* Layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
 		FCCDF60C264E798200FC01A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCCDF615264E79AA00FC01A3 /* Margin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margin.swift; sourceTree = "<group>"; };
+		FCCDF615264E79AA00FC01A3 /* MarginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginView.swift; sourceTree = "<group>"; };
 		FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		FCCDF61A264E83A800FC01A3 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		FCCDF623264E95C400FC01A3 /* Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +196,7 @@
 				FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */,
 				FC44AA92264C1F86004B32A4 /* Readme.md */,
 				FC44AA93264C1F86004B32A4 /* sample.json */,
+				FCCDF650264FC8B100FC01A3 /* Documentation */,
 				FC44AA77264C1EE7004B32A4 /* StackOverflow */,
 				FC44AAAC264C7EEF004B32A4 /* StackOverflowAPI */,
 				FCCDF60A264E798200FC01A3 /* Layout */,
@@ -233,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				FC44AAAD264C7EEF004B32A4 /* StackOverflowAPI.h */,
-				FC44AAA2264C7646004B32A4 /* StackOverflowQuestionsService.swift */,
+				FC44AAA2264C7646004B32A4 /* QuestionsService.swift */,
 				FCCDF630264E961300FC01A3 /* Timestamp.swift */,
 				FC44AAA4264C77FA004B32A4 /* CodableTransport.swift */,
 				FC44AAAE264C7EEF004B32A4 /* Info.plist */,
@@ -266,10 +267,11 @@
 			isa = PBXGroup;
 			children = (
 				FCCDF60B264E798200FC01A3 /* Layout.h */,
-				FCCDF615264E79AA00FC01A3 /* Margin.swift */,
+				FCCDF615264E79AA00FC01A3 /* MarginView.swift */,
 				FCCDF63D264E99FD00FC01A3 /* ColorView.swift */,
 				FC8967BC264DA2B300F72FDD /* HorizontalDividerView.swift */,
 				FCCDF64C264F188100FC01A3 /* ZStack.swift */,
+				FC8967BA264D99BB00F72FDD /* URLImageView.swift */,
 				FCCDF618264E7D4100FC01A3 /* UIKitExtensions.swift */,
 				FCCDF60C264E798200FC01A3 /* Info.plist */,
 			);
@@ -298,6 +300,7 @@
 			children = (
 				FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */,
 				FC8967B4264D0A4600F72FDD /* QuestionViewController.swift */,
+				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -307,10 +310,8 @@
 			children = (
 				FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */,
 				FC44AABA264C8A95004B32A4 /* ContentPlaceholderView.swift */,
-				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
-				FC8967C0264DBECD00F72FDD /* NavigationController.swift */,
 				FC8967C2264DC26700F72FDD /* BackgroundContainerView.swift */,
-				FC8967BA264D99BB00F72FDD /* URLImageView.swift */,
+				FC8967BE264DBC4800F72FDD /* SearchBarContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +333,13 @@
 				FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FCCDF650264FC8B100FC01A3 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,7 +540,6 @@
 				FCCDF647264F0DB700FC01A3 /* SearchResultTableViewCell.swift in Sources */,
 				FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */,
 				FC8967C1264DBECD00F72FDD /* NavigationController.swift in Sources */,
-				FC8967BB264D99BB00F72FDD /* URLImageView.swift in Sources */,
 				FC44AA79264C1EE7004B32A4 /* AppDelegate.swift in Sources */,
 				FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */,
 				FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */,
@@ -553,7 +560,7 @@
 			files = (
 				FC44AAB9264C7F05004B32A4 /* CodableTransport.swift in Sources */,
 				FCCDF631264E961300FC01A3 /* Timestamp.swift in Sources */,
-				FC44AAB8264C7EF8004B32A4 /* StackOverflowQuestionsService.swift in Sources */,
+				FC44AAB8264C7EF8004B32A4 /* QuestionsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +570,8 @@
 			files = (
 				FCCDF63E264E99FD00FC01A3 /* ColorView.swift in Sources */,
 				FCCDF619264E7D4100FC01A3 /* UIKitExtensions.swift in Sources */,
-				FCCDF616264E79AA00FC01A3 /* Margin.swift in Sources */,
+				FCCDF651264FD6AF00FC01A3 /* URLImageView.swift in Sources */,
+				FCCDF616264E79AA00FC01A3 /* MarginView.swift in Sources */,
 				FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */,
 				FCCDF63F264E9E6D00FC01A3 /* HorizontalDividerView.swift in Sources */,
 			);

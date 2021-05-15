@@ -73,23 +73,27 @@ final class SearchResultTableViewCell: UITableViewCell {
         
         backgroundColor = .clear
         contentView.backgroundColor = .clear
-        
+        backgroundColor = .magenta
+
         // Background color and padding
         let backgroundView = UIStackView.vertical(
             contents: [
+                HorizontalDividerView(
+                    height: 8,
+                    color: UIColor(named: "TertiaryBackgroundColor")
+                ),
                 HorizontalDividerView(),
                 ColorView(
                     color: UIColor(named: "PrimaryBackgroundColor")!
                 ),
                 HorizontalDividerView(),
+                HorizontalDividerView(
+                    height: 8,
+                    color: UIColor(named: "TertiaryBackgroundColor")
+                ),
             ]
         )
-        .margin(
-            insets: UIEdgeInsets(
-                horizontal: 0,
-                vertical: 8
-            )
-        )
+//        .add(to: self)
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
         self.backgroundView = backgroundView
 
