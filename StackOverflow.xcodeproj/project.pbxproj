@@ -14,7 +14,6 @@
 		FC44AA8F264C1F5D004B32A4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */; };
 		FC44AA95264C1F86004B32A4 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA92264C1F86004B32A4 /* Readme.md */; };
 		FC44AA96264C1F86004B32A4 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA93264C1F86004B32A4 /* sample.json */; };
-		FC44AA97264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */; };
 		FC44AA9B264C2D24004B32A4 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC44AA9A264C2D24004B32A4 /* SearchModel.swift */; };
 		FC44AAA0264C5DE9004B32A4 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */; };
 		FC44AAA1264C5DE9004B32A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC44AA9F264C5DE9004B32A4 /* Localizable.strings */; };
@@ -49,6 +48,9 @@
 		FCCDF64D264F188100FC01A3 /* ZStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64C264F188100FC01A3 /* ZStack.swift */; };
 		FCCDF64F264F206800FC01A3 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */; };
 		FCCDF651264FD6AF00FC01A3 /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8967BA264D99BB00F72FDD /* URLImageView.swift */; };
+		FCCDF65626500ADB00FC01A3 /* SearchLight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65326500ADB00FC01A3 /* SearchLight.png */; };
+		FCCDF65726500ADB00FC01A3 /* SearchDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65426500ADB00FC01A3 /* SearchDark.png */; };
+		FCCDF65926500B5B00FC01A3 /* QuestionDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65826500B5B00FC01A3 /* QuestionDark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +121,6 @@
 		FC44AA8E264C1F5D004B32A4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FC44AA92264C1F86004B32A4 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		FC44AA93264C1F86004B32A4 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
-		FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "iOS Developer Practical Test (1).pdf"; sourceTree = "<group>"; };
 		FC44AA9A264C2D24004B32A4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		FC44AA9E264C5DE9004B32A4 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		FC44AA9F264C5DE9004B32A4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -152,6 +153,9 @@
 		FCCDF646264F0DB700FC01A3 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		FCCDF64C264F188100FC01A3 /* ZStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZStack.swift; sourceTree = "<group>"; };
 		FCCDF64E264F206800FC01A3 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		FCCDF65326500ADB00FC01A3 /* SearchLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchLight.png; sourceTree = "<group>"; };
+		FCCDF65426500ADB00FC01A3 /* SearchDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchDark.png; sourceTree = "<group>"; };
+		FCCDF65826500B5B00FC01A3 /* QuestionDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuestionDark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +197,6 @@
 		FC44AA6C264C1EE7004B32A4 = {
 			isa = PBXGroup;
 			children = (
-				FC44AA94264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf */,
 				FC44AA92264C1F86004B32A4 /* Readme.md */,
 				FC44AA93264C1F86004B32A4 /* sample.json */,
 				FCCDF650264FC8B100FC01A3 /* Documentation */,
@@ -338,6 +341,9 @@
 		FCCDF650264FC8B100FC01A3 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDF65426500ADB00FC01A3 /* SearchDark.png */,
+				FCCDF65326500ADB00FC01A3 /* SearchLight.png */,
+				FCCDF65826500B5B00FC01A3 /* QuestionDark.png */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
@@ -499,13 +505,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC44AA97264C1F86004B32A4 /* iOS Developer Practical Test (1).pdf in Resources */,
+				FCCDF65626500ADB00FC01A3 /* SearchLight.png in Resources */,
 				FC44AA85264C1EE9004B32A4 /* LaunchScreen.storyboard in Resources */,
 				FC44AA96264C1F86004B32A4 /* sample.json in Resources */,
 				FC44AAA1264C5DE9004B32A4 /* Localizable.strings in Resources */,
+				FCCDF65926500B5B00FC01A3 /* QuestionDark.png in Resources */,
 				FC44AA82264C1EE9004B32A4 /* Assets.xcassets in Resources */,
 				FC44AA95264C1F86004B32A4 /* Readme.md in Resources */,
 				FC44AAA0264C5DE9004B32A4 /* Localizable.stringsdict in Resources */,
+				FCCDF65726500ADB00FC01A3 /* SearchDark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

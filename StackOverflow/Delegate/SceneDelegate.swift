@@ -33,12 +33,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             configuration: SearchModel.Configuration(
                 maximumResults: 20
             ),
-//            service: QuestionsService(
-//                baseURL: URL(string: "https://api.stackexchange.com/2.2/")!,
-//                session: .shared
-//            )
-            // Uncomment the MockQuestionsService
-            service: MockQuestionsService()
+            service: QuestionsService(
+                baseURL: URL(string: "https://api.stackexchange.com/2.2/")!,
+                session: .shared
+            )
+            // Note: Uncomment the MockQuestionsService below to use generated
+            // data for testing.
+            // service: MockQuestionsService()
         )
         let viewModel = SearchViewModel(
             model: model

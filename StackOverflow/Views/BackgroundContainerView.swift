@@ -22,7 +22,7 @@ class BackgroundContainerView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(named: "SecondaryBackgroundColor")
+        backgroundColor = UIColor(named: "TertiaryBackgroundColor")
         layoutMargins = .zero
         let notificationCenter = NotificationCenter.default
         notificationCenter.publisher(

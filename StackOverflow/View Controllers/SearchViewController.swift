@@ -202,7 +202,9 @@ final class SearchViewController: UITableViewController {
             },
             for: .valueChanged
         )
-        
+
+        view.backgroundColor = UIColor(named: "TertiaryBackgroundColor")
+
         // Configure table view
         let cellIdentifier = "ResultCell"
         tableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
