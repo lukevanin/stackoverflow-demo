@@ -14,10 +14,16 @@ class SearchBarContainerView: UIView {
     var minimumHeight: CGFloat = 32
     var maximumHeight: CGFloat = 44
     let searchBar: UISearchBar
+    
+    /// See: https://stackoverflow.com/a/44932834/762377
+    override var intrinsicContentSize: CGSize {
+        return UIView.layoutFittingExpandedSize
+    }
 
     init(customSearchBar: UISearchBar) {
         searchBar = customSearchBar
         super.init(frame: CGRect.zero)
+        searchBar.translatesAutoresizingMaskIntoConstraints = true
         addSubview(searchBar)
     }
 

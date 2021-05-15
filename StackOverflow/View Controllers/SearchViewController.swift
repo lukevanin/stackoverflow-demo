@@ -184,7 +184,7 @@ final class SearchViewController: UITableViewController {
         // Place the search bar in the navigation bar.
         navigationItem.titleView = {
             let containerView = SearchBarContainerView(customSearchBar: searchBar)
-            containerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44)
+            containerView.translatesAutoresizingMaskIntoConstraints = false
             return containerView
         }()
 
