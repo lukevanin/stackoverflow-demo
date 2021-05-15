@@ -211,9 +211,6 @@ final class SearchViewController: UITableViewController {
         
         tableView.backgroundColor = UIColor(named: "TertiaryBackgroundColor")
         tableView.autoresizesSubviews = true
-//        tableView.insetsContentViewsToSafeArea = false
-//        tableView.insetsLayoutMarginsFromSafeArea = false
-//        tableView.contentInsetAdjustmentBehavior = .never
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
         tableView.rowHeight = 80 + 16

@@ -51,7 +51,6 @@
 		FCCDF65626500ADB00FC01A3 /* SearchLight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65326500ADB00FC01A3 /* SearchLight.png */; };
 		FCCDF65726500ADB00FC01A3 /* SearchDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65426500ADB00FC01A3 /* SearchDark.png */; };
 		FCCDF65926500B5B00FC01A3 /* QuestionDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65826500B5B00FC01A3 /* QuestionDark.png */; };
-		FCCDF65B26500E0C00FC01A3 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF65A26500E0C00FC01A3 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +156,6 @@
 		FCCDF65326500ADB00FC01A3 /* SearchLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchLight.png; sourceTree = "<group>"; };
 		FCCDF65426500ADB00FC01A3 /* SearchDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchDark.png; sourceTree = "<group>"; };
 		FCCDF65826500B5B00FC01A3 /* QuestionDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuestionDark.png; sourceTree = "<group>"; };
-		FCCDF65A26500E0C00FC01A3 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,7 +262,6 @@
 			children = (
 				FC44AA78264C1EE7004B32A4 /* AppDelegate.swift */,
 				FC44AA7A264C1EE7004B32A4 /* SceneDelegate.swift */,
-				FCCDF65A26500E0C00FC01A3 /* Theme.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -560,7 +557,6 @@
 				FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */,
 				FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */,
 				FC8967BF264DBC4800F72FDD /* SearchBarContainerView.swift in Sources */,
-				FCCDF65B26500E0C00FC01A3 /* Theme.swift in Sources */,
 				FC44AA7B264C1EE7004B32A4 /* SceneDelegate.swift in Sources */,
 				FCCDF64F264F206800FC01A3 /* UIKitExtensions.swift in Sources */,
 			);
