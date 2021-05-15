@@ -14,11 +14,11 @@ Some of the concepts demonstrated in this project:
 
 This document contains an overview of the purpose of the components and how they interact. 
 
-![Search Screen](Documentation/SearchLight.png?raw=true  | width=200)
+<img src="Documentation/SearchLight.png" width="390" height="844" />
 
-![Search Screen (Dark Mode)](Documentation/SearchDark.png?raw=true  | width=200)
+<img src="Documentation/SearchDark.png" width="390" height="844" />
 
-![Question Screen (Dark Mode)](Documentation/QuestionDark.png?raw=true  | width=200)
+<img src="Documentation/QuestionDark.png" width="390" height="844" />
 
 
 ## Architecture
