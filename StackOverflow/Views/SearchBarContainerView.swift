@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+/// Wrap UISearchBar so that it can be displayed in a UINavBar, without changing the size of the UINavBar.
 /// See: https://stackoverflow.com/a/46618780/762377
 class SearchBarContainerView: UIView {
 

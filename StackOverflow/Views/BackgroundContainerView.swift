@@ -8,6 +8,9 @@
 import UIKit
 import Combine
 
+/// General purpose view used for showing background content, such as in a table or collection view.
+/// Animates the transition when switching between views. Adjusts content margins to accomodate the
+/// keyboard.
 class BackgroundContainerView: UIView {
 
     var animationDuration: TimeInterval = 0.25

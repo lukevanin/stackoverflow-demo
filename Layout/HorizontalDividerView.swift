@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Displays a horizontal view with a constant height and solid background color.
 public final class HorizontalDividerView: UIView {
     
     public var height: CGFloat {

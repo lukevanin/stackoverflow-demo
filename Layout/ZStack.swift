@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+// Displays a collection of subviews stacked on top of each other.
 public final class ZStack: UIView {
     
     public var contents: [UIView] = [] {

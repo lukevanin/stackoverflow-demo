@@ -11,6 +11,7 @@ import Combine
 import Mock
 
 
+/// Request for searching for questions.
 public struct QuestionsRequest: Codable {
     
     public enum Order: String, Codable {
@@ -44,6 +45,7 @@ public struct QuestionsRequest: Codable {
 }
 
 
+/// Response from a search query.
 public struct QuestionsResponse: Decodable {
     
     public struct Item: Decodable {
@@ -76,14 +78,13 @@ public struct QuestionsResponse: Decodable {
 }
 
 
+/// Service for querying questions.
 public protocol IQuestionsService {
     func getQuestions(_ request: QuestionsRequest) -> AnyPublisher<QuestionsResponse, Error>
 }
 
 
-///
-///
-///
+/// Mock service which returns a predetermined or synthesized result set.
 public final class MockQuestionsService: IQuestionsService {
     
     private let mock = Mock()
@@ -131,9 +132,8 @@ public final class MockQuestionsService: IQuestionsService {
 }
 
 
-///
+/// Query the StackOverflow web API for questions.
 /// https://api.stackexchange.com/docs/questions
-///
 public final class QuestionsService: IQuestionsService {
     
     private let transport: ICodableTransport
@@ -149,6 +149,7 @@ public final class QuestionsService: IQuestionsService {
         )
     }
     
+    /// Finds questions matching a given tag
     public func getQuestions(_ request: QuestionsRequest) -> AnyPublisher<QuestionsResponse, Error> {
         var parameters = [URLQueryItem]()
         parameters.append(URLQueryItem(name: "pageSize", value: String(request.pageSize)))

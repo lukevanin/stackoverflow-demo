@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 
+/// Displays an image laoded from a remote URL.
 public final class URLImageView: UIView {
     
     public var url: URL? {

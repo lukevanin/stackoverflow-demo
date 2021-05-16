@@ -12,6 +12,7 @@ import Combine
 
 import Layout
 
+/// Displays the details of a single search result.
 final class QuestionViewController: UIViewController {
     
     private let headerLabel: UILabel = {
@@ -121,7 +122,7 @@ final class QuestionViewController: UIViewController {
         
         contentWebView.navigationDelegate = self
 
-        // Layout
+        // Set up the view layout (see the Layout framework for details).
         UIStackView.vertical(
             alignment: .fill,
             contents: [
@@ -162,6 +163,8 @@ final class QuestionViewController: UIViewController {
                 .color(UIColor(named: "SecondaryBackgroundColor")!)
             ])
             .add(to: view)
+        
+        // Update the view.
         invalidateView()
     }
     
@@ -202,7 +205,9 @@ final class QuestionViewController: UIViewController {
     }
     
     private func updateBody() {
-        #warning("TODO; Move HTML into template")
+        // Display the HTML content in a web view. Embed the content in an HTML
+        // document to control the appearance.
+        #warning("TODO; Move HTML into file template")
         let html = """
             <!DOCTYPE html>
             <html>
@@ -232,31 +237,6 @@ final class QuestionViewController: UIViewController {
         contentWebView.loadHTMLString(html, baseURL: nil)
     }
     
-//    private func updateBody()
-//        contentActivityView.startAnimating()
-//        viewModel
-//            .formattedBody()
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] value in
-//                guard let self = self else {
-//                    return
-//                }
-//                self.contentActivityView.stopAnimating()
-//                UIView.transition(
-//                    with: self.view,
-//                    duration: 0.25,
-//                    options: [.transitionCrossDissolve],
-//                    animations: {
-//                        self.contentTextView.attributedText = value
-//                    },
-//                    completion: { _ in
-//                        self.contentActivityView.removeFromSuperview()
-//                    }
-//                )
-//            }
-//            .store(in: &cancellables)
-//    }
-    
     private func updateProfileImage() {
         if let url = viewModel.owner.profileImageURL {
             authorProfileImageView.isHidden = false
@@ -281,10 +261,13 @@ final class QuestionViewController: UIViewController {
 extension QuestionViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if navigationAction.navigationType == .linkActivated, let url = navigationAction.request.url {
+            // A link was tapped. Navigate to the link.
             decisionHandler(.cancel)
             navigate(to: url)
         }
         else {
+            // Some other navigation was performed. Allows the navigation
+            // to proceed.
             decisionHandler(.allow)
         }
     }

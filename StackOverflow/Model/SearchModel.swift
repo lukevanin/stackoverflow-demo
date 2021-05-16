@@ -11,6 +11,10 @@ import Combine
 import StackOverflowAPI
 
 
+// MARK: - Search Model States
+
+
+/// Base class for search model state. Refer to individual state implementations below for details.
 private class AnyState {
     weak var context: SearchModel!
     
@@ -25,6 +29,7 @@ private class AnyState {
 }
 
 
+/// Empty state. Initial state for the model, before a search has been executed.
 private final class EmptyState: AnyState {
     
     override func enter() {
@@ -37,11 +42,13 @@ private final class EmptyState: AnyState {
             // Query is empty. Don't do anything.
             return
         }
+        // Query is non-empty. Perform the search.
         context.setState(SearchState(query: query))
     }
 }
 
 
+/// Search State. Executes a query and returns the results.
 private final class SearchState: AnyState {
     
     private var requestCancellable: AnyCancellable?
@@ -53,14 +60,21 @@ private final class SearchState: AnyState {
     
     override func enter() {
         dispatchPrecondition(condition: .onQueue(.main))
+        
+        // Create the request using the maximum number of results, and query.
         let maximumResults = context.configuration.maximumResults
         let tags = [query]
         var request = QuestionsRequest()
         request.pageSize = maximumResults
         request.tagged = tags
+        
+        // Call the service method to run the query, then wait for the response.
+        // Keep a reference to the asynchronous cancellable so that it stays
+        // allocated when this method returns.
         requestCancellable = context.service
             .getQuestions(request)
             .map { response -> SearchModel.Status in
+                // Convert the web service result to the model structure. 
                 let items = response
                     .items
                     .map { item in
@@ -89,6 +103,7 @@ private final class SearchState: AnyState {
                 return SearchModel.Status.results(results)
             }
             .catch { error in
+                // Catch and convert errors to a search status.
                 Just(.error(error))
             }
             .receive(on: DispatchQueue.main)
@@ -96,6 +111,7 @@ private final class SearchState: AnyState {
                 guard let self = self else {
                     return
                 }
+                // We're done. Go to the output state.
                 self.context.setState(OutputState(query: self.query, results: results))
             }
     }
@@ -116,6 +132,7 @@ private final class SearchState: AnyState {
 }
 
 
+/// Output state. Outputs the results of the search query.
 private final class OutputState: AnyState {
     
     private let query: String
@@ -145,8 +162,36 @@ private final class OutputState: AnyState {
 }
 
 
+// MARK: - Search Model
+
+
+/// Used for searching for questions on StackOverflow.
+///
+/// Implemented using a finite state machine.
+///
+/// The following states are used:
+///
+/// **EmptyState:**
+/// No results are available. Default state before a query is executed. The app displays a placeholder
+/// message when the model is in the empty state.
+///
+/// **SearchState:**
+/// A query is being executed. The model will transition to the output state once the query completes. The app
+/// should display a progress indicator while the model is in the search state.
+///
+/// **OutputState:**
+/// The query is complete. The model may transition to the search state if another query is executed. The app
+/// should display the results of the query (list of items or an error).
+///
+/// Usage:
+/// 1. Instantiate the `SearchModel` passing a configuration and service instance.
+/// 2. Observe the `results` publisher to receive new search results.
+/// 3. Call `search(query:)` passing a list of tags to search for.
+/// 4. Optionally call `refresh()` to repeat the previous query.
 final class SearchModel {
     
+    /// Entity representing the results of a seqrch query. Contains the list of tags from the query, and zero or
+    /// more items matching the query.
     struct Results {
         
         struct Item: Hashable, Identifiable {
@@ -173,8 +218,13 @@ final class SearchModel {
         let items: [Item]
     }
     
+    /// Output of a search query, which may be an error, or a list of results.
     enum Status {
+        
+        /// Successful query containing a valid result set.
         case results(Results)
+        
+        /// Failed query resulting in an error.
         case error(Error)
     }
     
@@ -197,13 +247,15 @@ final class SearchModel {
         self.service = service
         setState(EmptyState())
     }
-    
-    func refresh() {
-        currentState?.refresh()
-    }
-    
+
+    /// Searches for questions matching the given query containing a tag to search for.
     func search(query: String) {
         currentState?.search(query: query)
+    }
+
+    /// Repeat the previous query.
+    func refresh() {
+        currentState?.refresh()
     }
     
     fileprivate func setState(_ state: AnyState) {

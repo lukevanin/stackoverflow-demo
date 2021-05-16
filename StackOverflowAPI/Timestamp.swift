@@ -9,6 +9,7 @@ import Foundation
 
 
 public extension Date {
+    /// Converts a timestamp to a date.
     init(_ timestamp: Timestamp) {
         self.init(
             timeIntervalSince1970: TimeInterval(timestamp.unixTimestamp) / 1000
@@ -17,6 +18,8 @@ public extension Date {
 }
 
 
+/// Represents a unix timestamp (milliseconds since midnight 1 January 1970). Used by the StackOverflow
+/// web service API to represent dates.
 public struct Timestamp {
     /// Milliseconds since 01-01-1970  00:00 UTC
     public let unixTimestamp: Int64
@@ -25,6 +28,7 @@ public struct Timestamp {
         self.unixTimestamp = unixTimestamp
     }
     
+    /// Converts a date to timestamp.
     public init(_ date: Date) {
         self.unixTimestamp = Int64(round(date.timeIntervalSince1970 * 1000))
     }

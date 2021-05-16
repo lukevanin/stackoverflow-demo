@@ -15,6 +15,7 @@ extension UIView {
 }
 
 
+/// Displays a solid color. Contains a sub-view.
 public final class ColorView: UIView {
     
     public var color: UIColor {

@@ -10,6 +10,7 @@ import UIKit
 
 extension UIColor {
     
+    /// Convert a UIColor to its hex representation
     func hex() -> String {
         let c = components()
         let r = UInt8(round(c.r * 255))

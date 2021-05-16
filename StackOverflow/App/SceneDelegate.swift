@@ -29,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func makeViewController() -> UIViewController {
+        // Instantiate the model, view model, and initial view controller.
         let model = SearchModel(
             configuration: SearchModel.Configuration(
                 maximumResults: 20

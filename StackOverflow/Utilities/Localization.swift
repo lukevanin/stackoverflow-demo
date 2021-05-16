@@ -8,6 +8,7 @@
 import Foundation
 
 
+/// Helper methods for common localization tasks.
 struct Localization {
     
     static let shared = Localization()

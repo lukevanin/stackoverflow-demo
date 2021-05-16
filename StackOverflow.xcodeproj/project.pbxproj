@@ -51,6 +51,7 @@
 		FCCDF65626500ADB00FC01A3 /* SearchLight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65326500ADB00FC01A3 /* SearchLight.png */; };
 		FCCDF65726500ADB00FC01A3 /* SearchDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65426500ADB00FC01A3 /* SearchDark.png */; };
 		FCCDF65926500B5B00FC01A3 /* QuestionDark.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCDF65826500B5B00FC01A3 /* QuestionDark.png */; };
+		FCCDF65D2650760300FC01A3 /* SearchViewModel+SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCDF65C2650760300FC01A3 /* SearchViewModel+SearchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +157,7 @@
 		FCCDF65326500ADB00FC01A3 /* SearchLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchLight.png; sourceTree = "<group>"; };
 		FCCDF65426500ADB00FC01A3 /* SearchDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SearchDark.png; sourceTree = "<group>"; };
 		FCCDF65826500B5B00FC01A3 /* QuestionDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QuestionDark.png; sourceTree = "<group>"; };
+		FCCDF65C2650760300FC01A3 /* SearchViewModel+SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+SearchModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				FCCDF644264EC15200FC01A3 /* SearchViewModel.swift */,
+				FCCDF65C2650760300FC01A3 /* SearchViewModel+SearchModel.swift */,
 				FC44AA9A264C2D24004B32A4 /* SearchModel.swift */,
 			);
 			path = Model;
@@ -553,6 +556,7 @@
 				FCCDF645264EC15200FC01A3 /* SearchViewModel.swift in Sources */,
 				FC44AABD264C93BA004B32A4 /* FoundationExtensions.swift in Sources */,
 				FC8967B9264D133C00F72FDD /* Localization.swift in Sources */,
+				FCCDF65D2650760300FC01A3 /* SearchViewModel+SearchModel.swift in Sources */,
 				FC44AABB264C8A95004B32A4 /* ContentPlaceholderView.swift in Sources */,
 				FC8967B5264D0A4600F72FDD /* QuestionViewController.swift in Sources */,
 				FC8967C3264DC26700F72FDD /* BackgroundContainerView.swift in Sources */,

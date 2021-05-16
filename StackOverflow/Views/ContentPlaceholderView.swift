@@ -8,9 +8,9 @@
 import UIKit
 
 
-///
-///
-///
+/// General purpose view used for showing a placeholder icon and message where content would otherwise
+/// normally appear. This is for aesthetics, but can also show useful information to the user about the reason
+/// for missing content (e.g. error or an empty search result).
 final class ContentPlaceholderView: UIView {
     
     var caption: String? {

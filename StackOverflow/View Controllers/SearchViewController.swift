@@ -11,9 +11,10 @@ import Combine
 import Layout
 
 
-///
-///
-///
+// MARK: - Search View Controller States
+
+
+/// Base class for search view controller states.
 private class AnyState {
     weak var context: SearchViewController!
     func enter() {
@@ -22,10 +23,10 @@ private class AnyState {
 }
 
 
-///
-///
-///
+/// Displays a placeholder before a query is run. Shows a placeholder and clears the results from the rable
+/// view.
 private final class PlaceholderState: AnyState {
+    
     override func enter() {
         context.setBackground(placeholderView())
         context.setResults([], animated: true)
@@ -41,9 +42,7 @@ private final class PlaceholderState: AnyState {
 }
 
 
-///
-///
-///
+/// Starts the search and shows an activity indicator while the search is running.
 private final class SearchState: AnyState {
     private let query: String
     
@@ -69,9 +68,7 @@ private final class SearchState: AnyState {
 }
 
 
-///
-///
-///
+/// Shows an error when a search fails.
 private final class ErrorState: AnyState {
     private let error: String
     
@@ -94,9 +91,7 @@ private final class ErrorState: AnyState {
 }
 
 
-///
-///
-///
+/// Shows an empty state when a search query returns no results.
 private final class EmptyState: AnyState {
     private let description: String
     
@@ -119,9 +114,7 @@ private final class EmptyState: AnyState {
 }
 
 
-///
-///
-///
+/// Shows a list of results from a query.
 private final class ResultsState: AnyState {
     private let results: SearchViewModel.Results
     
@@ -136,9 +129,7 @@ private final class ResultsState: AnyState {
 }
 
 
-///
-/// Search view controller used to display search results.
-///
+/// Takes a query as input and displays the results.
 final class SearchViewController: UITableViewController {
 
     private let backgroundView: BackgroundContainerView = {
@@ -169,6 +160,7 @@ final class SearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Customize the search bar.
         searchBar.autocapitalizationType = .none
         searchBar.searchTextField.placeholder = NSLocalizedString("search-prompt", comment: "")
         searchBar.returnKeyType = .done

@@ -93,11 +93,10 @@ final class SearchResultTableViewCell: UITableViewCell {
                 ),
             ]
         )
-//        .add(to: self)
         backgroundView.translatesAutoresizingMaskIntoConstraints = true
         self.backgroundView = backgroundView
 
-        // Content
+        // Content layout.
         UIStackView.horizontal(
             spacing: 16,
             alignment: .fill,

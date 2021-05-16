@@ -23,6 +23,28 @@ This document contains an overview of the purpose of the components and how they
 
 ## Architecture
 
+### Overview:
+
+The code generally uses a basic Model-View-Controller design pattern for the user interface. 
+
+The model layer consists of a Model class and a View Model class. 
+
+The Model represents the business domain data and logic used by the application. - ie. the "raw" data used by the application.
+
+The Model is the single source of truth in the application.
+
+The Model by itself is not direcly usable for displaying content to the user, and so a View Model is used which observes the Model and transforms the data into a human readable format. 
+
+The View Model also observes the user interface and performs actions based on user input, such as delegating work to the model, or performing navigation.
+
+The View Model is essentially a data representation of the user interface.
+
+This separation of concerns isolates the user interface from the data, and allows the logic and operations to be tested separately from the view components themselves.
+
+The Model uses a web service to perform the actual work of sending the search request to the service provider and retrieving the results.
+
+The sections below describe the function of each specific component in more detail.
+
 ### StackOverflow
 
 **SceneDelegate:**

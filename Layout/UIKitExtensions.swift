@@ -10,6 +10,7 @@ import UIKit
 
 extension UIEdgeInsets {
     
+    /// Creates a UIEdgeInsets with all edges set to the same value.
     public init(all margin: CGFloat) {
         self.init(
             top: margin,
@@ -19,6 +20,8 @@ extension UIEdgeInsets {
         )
     }
 
+    /// Creates a UIEdgeInsets with horizontal (left and right) edges having the same value, and vertical
+    /// (top and bottom) values having the same value.
     public init(horizontal: CGFloat, vertical: CGFloat) {
         self.init(
             top: vertical,
@@ -32,6 +35,7 @@ extension UIEdgeInsets {
 
 extension UIStackView {
     
+    /// Creates a UIStackView with its subviews arranged along the vertical axis.
     public static func vertical(
         spacing: CGFloat? = nil,
         alignment: UIStackView.Alignment? = nil,
@@ -47,6 +51,7 @@ extension UIStackView {
         )
     }
     
+    /// Creates a UIStackView with its subviews arranged along the horizontal axis.
     public static func horizontal(
         spacing: CGFloat? = nil,
         alignment: UIStackView.Alignment? = nil,
@@ -62,6 +67,7 @@ extension UIStackView {
         )
     }
 
+    /// Creates a UIStackView
     static func stack(
         axis: NSLayoutConstraint.Axis,
         spacing: CGFloat? = nil,
@@ -91,6 +97,7 @@ extension UIStackView {
 
 extension UIView {
     
+    /// Applies a width and/or height constraint to the view. Returns the same view instance.
     public func size(width: CGFloat? = nil, height: CGFloat? = nil) -> Self {
         if let width = width {
             widthAnchor.constraint(equalToConstant: width).isActive = true
@@ -101,23 +108,28 @@ extension UIView {
         return self
     }
     
+    /// Constrains the view to a given aspect ratio. Returns the same view instance.
     public func aspectRatio(_ ratio: CGFloat) -> Self {
         widthAnchor.constraint(equalTo: heightAnchor, multiplier: ratio).isActive = true
         return self
     }
 
+    /// Inserts the view into the given superview's hierarchy at a given index. Constrains the view to the
+    /// superview's layout.
     public func insert(into superview: UIView, at index: Int) {
         removeFromSuperview()
         superview.insertSubview(self, at: index)
         attach(to: superview)
     }
 
+    /// Appends the view to the given superview's hierarchy. Constrains the view to the superview's layout.
     public func add(to superview: UIView)  {
         removeFromSuperview()
         superview.addSubview(self)
         attach(to: superview)
     }
     
+    /// Constrains the view to a given superview's layout area.
     public func attach(to superview: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

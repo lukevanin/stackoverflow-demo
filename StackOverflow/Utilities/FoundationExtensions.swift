@@ -9,9 +9,8 @@ import Foundation
 
 extension String {
 
-    ///
+    /// Convert HTML encoded entities (e.g. &quot;) to UTF8.
     /// See: https://stackoverflow.com/a/25607542/762377
-    ///
     func decodeHTMLEntities() -> String? {
 
         guard let data = self.data(using: .utf8) else {

@@ -15,6 +15,7 @@ extension UIView {
 }
 
 
+/// Contains a subview anchored to its margins.
 public final class MarginView: UIView {
     
     public var contents: UIView? {

@@ -9,92 +9,13 @@ import UIKit
 import Combine
 
 
-extension SearchViewModel.Status {
-    init(_ status: SearchModel.Status) {
-        let localization = Localization.shared
-        switch status {
-        case .error(let error):
-            let description = localization.formattedString(named: "search-error %@", error.localizedDescription)
-            self = .error(description)
-            
-        case .results(let results):
-            if results.items.count > 0 {
-                self = .results(SearchViewModel.Results(results))
-            }
-            else {
-                let description = localization.formattedString(named: "search-empty %@", results.tags.joined(separator: ", "))
-                self = .noResults(description)
-            }
-        }
-    }
-}
-
-
-extension SearchViewModel.Results {
-    init(_ results: SearchModel.Results) {
-        self.tags = results.tags
-        self.items = results.items.map { item in
-            SearchViewModel.Results.Item(item)
-        }
-    }
-}
-
-
-extension SearchViewModel.Results.Item {
-    init(_ item: SearchModel.Results.Item) {
-        let localization = Localization.shared
-        self.id = String(item.id)
-        self.title = item.title.decodeHTMLEntities() ?? item.title
-        self.votes = localization.formattedString(named: "vote-count %lld", item.votes)
-        self.answers = localization.formattedString(named: "answer-count %lld", item.answers)
-        self.views = localization.formattedString(named: "view-count %lld", item.views)
-        self.askedDate = localization.formattedString(named: "asked-on %@ at %@", localization.formatDate(item.askedDate), localization.formatTime(item.askedDate))
-        self.owner = SearchViewModel.Results.Item.Owner(item.owner)
-        self.answered = item.answered
-        self.content = item.content
-        self.tags = item.tags.joined(separator: ", ")
-    }
-    
-    func formattedBody() -> AnyPublisher<NSAttributedString, Never> {
-        Future<NSAttributedString, Never> { completion in
-            DispatchQueue.global(qos: .userInitiated).async {
-                let data = content.data(using: .utf8)
-                let content: NSAttributedString = data.flatMap { data -> NSAttributedString? in
-                    let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                        .documentType: NSAttributedString.DocumentType.html,
-                        .characterEncoding: String.Encoding.utf8.rawValue
-                    ]
-                    return try? NSAttributedString(
-                        data: data,
-                        options: options,
-                        documentAttributes: nil
-                    )
-                } ?? NSAttributedString(string: content)
-                let attributes: [NSAttributedString.Key: Any] = [
-                    .font: UIFont.systemFont(ofSize: 13, weight: .regular),
-                    .foregroundColor: UIColor(named: "PrimaryTextColor") as Any,
-                ]
-                let range = NSRange(location: 0, length: content.length)
-                let output = NSMutableAttributedString(attributedString: content)
-                output.setAttributes(attributes, range: range)
-                completion(.success(output))
-            }
-        }
-        .eraseToAnyPublisher()
-    }
-}
-
-
-extension SearchViewModel.Results.Item.Owner {
-    init(_ owner: SearchModel.Results.Item.Owner) {
-        let localization = Localization.shared
-        self.displayName = localization.formattedString(named: "asked-by %@", owner.displayName)
-        self.reputation = owner.reputation.map { localization.formatInteger($0) }
-        self.profileImageURL = owner.profileImageURL
-    }
-}
-
-
+/// Provides human readable search results. Typically used by views for performing search queries and
+/// displaying search results to the user.
+///
+/// Usage:
+/// 1.Observe `results` to receive updates on the search status, including errors and search results.
+/// 2. Call`search(query:)` method passing the tag to search for.
+/// 3. Call `refresh()` to repeat the previously executed query.
 final class SearchViewModel {
 
     struct Results {
@@ -152,10 +73,12 @@ final class SearchViewModel {
             }
     }
     
+    /// Repeats the previous query.
     func refresh() {
         model.refresh()
     }
     
+    /// Performs a search query using the provided tags.
     func search(query: String) -> Void {
         model.search(query: query)
     }
